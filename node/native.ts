@@ -209,6 +209,12 @@ const uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol = Symbol();
 export type SemaphoreFactoryInterface = bigint & { [uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol };
 
 
+export const joystickInterface_getButtonsStatus = (instance: JoystickInterface, index: number): boolean[] => native.joystickInterface_getButtonsStatus(instance, index);
+export const joystickInterface_isPresent = (instance: JoystickInterface, index: number): boolean => native.joystickInterface_isPresent(instance, index);
+export const joystickInterface_getAxes = (instance: JoystickInterface, index: number): number[] => native.joystickInterface_getAxes(instance, index);
+export const keyboardInterface_isKeyDown = (instance: KeyboardInterface, key: number): boolean => native.keyboardInterface_isKeyDown(instance, key);
+export const mouseInterface_setCursorMode = (instance: MouseInterface, mode: number): void => native.mouseInterface_setCursorMode(instance, mode);
+export const mouseInterface_isButtonPressed = (instance: MouseInterface, button: number): boolean => native.mouseInterface_isButtonPressed(instance, button);
 export const attachmentInterface_getImage = (instance: AttachmentInterface): ImageInterface => native.attachmentInterface_getImage(instance);
 export const attachmentInterface_getBlending = (instance: AttachmentInterface): VEngineAttachmentBlending => native.attachmentInterface_getBlending(instance);
 export const attachmentInterface_isCleared = (instance: AttachmentInterface): boolean => native.attachmentInterface_isCleared(instance);
@@ -226,7 +232,6 @@ export const descriptorSetInterface_bindBuffer = (instance: DescriptorSetInterfa
 export const descriptorSetLayoutFactoryInterface_build = (instance: DescriptorSetLayoutFactoryInterface): DescriptorSetLayoutInterface => native.descriptorSetLayoutFactoryInterface_build(instance);
 export const descriptorSetLayoutInterface_addField = (instance: DescriptorSetLayoutInterface, fieldType: VEngineDescriptorSetFieldType, fieldAccesibility: VEngineDescriptorSetFieldStage): void => native.descriptorSetLayoutInterface_addField(instance, fieldType, fieldAccesibility);
 export const descriptorSetLayoutInterface_generateDescriptorSet = (instance: DescriptorSetLayoutInterface): DescriptorSetInterface => native.descriptorSetLayoutInterface_generateDescriptorSet(instance);
-export const genericBufferInterface_map = (instance: GenericBufferInterface, offset: number, size: number, data: ArrayBuffer): void => native.genericBufferInterface_map(instance, offset, size, data);
 export const genericBufferInterface_unmap = (instance: GenericBufferInterface): void => native.genericBufferInterface_unmap(instance);
 export const genericBufferInterface_getSize = (instance: GenericBufferInterface): number => native.genericBufferInterface_getSize(instance);
 export const genericBufferInterface_getType = (instance: GenericBufferInterface): VEngineBufferType => native.genericBufferInterface_getType(instance);
@@ -280,11 +285,6 @@ export const toolkitInterface_getKeyboard = (instance: ToolkitInterface): Keyboa
 export const toolkitInterface_getMouse = (instance: ToolkitInterface): MouseInterface => native.toolkitInterface_getMouse(instance);
 export const toolkitInterface_getJoystick = (instance: ToolkitInterface): JoystickInterface => native.toolkitInterface_getJoystick(instance);
 export const toolkitInterface_getMedia = (instance: ToolkitInterface): MediaInterface => native.toolkitInterface_getMedia(instance);
-export const joystickInterface_getButtonsStatus = (instance: JoystickInterface, index: number): boolean[] => native.joystickInterface_getButtonsStatus(instance, index);
-export const joystickInterface_isPresent = (instance: JoystickInterface, index: number): boolean => native.joystickInterface_isPresent(instance, index);
-export const joystickInterface_getAxes = (instance: JoystickInterface, index: number): number[] => native.joystickInterface_getAxes(instance, index);
-export const keyboardInterface_isKeyDown = (instance: KeyboardInterface, key: number): boolean => native.keyboardInterface_isKeyDown(instance, key);
-export const mouseInterface_setCursorMode = (instance: MouseInterface, mode: number): void => native.mouseInterface_setCursorMode(instance, mode);
-export const mouseInterface_isButtonPressed = (instance: MouseInterface, button: number): boolean => native.mouseInterface_isButtonPressed(instance, button);
+export const genericBufferInterface_map = (instance: GenericBufferInterface, offset: number, size: number): ArrayBuffer => native.genericBufferInterface_map(instance, offset, size);
 export const toolkitInterface_new_window = (width: number, height: number, validationLayers: boolean, windowName: string): ToolkitInterface => native.toolkitInterface_new_window(width, height, validationLayers, windowName);
 export const toolkitInterface_new_headless = (validationLayers: boolean): ToolkitInterface => native.toolkitInterface_new_headless(validationLayers);

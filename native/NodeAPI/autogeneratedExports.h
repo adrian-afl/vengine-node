@@ -1,3 +1,107 @@
+// @ExportFunction joystickInterface_getButtonsStatus = (instance: JoystickInterface, index: number): boolean[]
+Napi::Value joystickInterface_getButtonsStatus(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    int arg = 0;
+    
+    auto instance = (JoystickInterface*)castBigIntToVoidPointer(info[arg++]);
+    
+    auto param_index = asInt32(info[arg++]);
+    
+    auto result = instance->getButtonsStatus(param_index);
+
+    auto resultArray = Napi::Array::New(env);
+    for(uint32_t arri = 0; arri < result.size(); arri++){
+        resultArray.Set(arri, newBoolean(result[arri]));
+    }
+    return resultArray;
+};
+        
+
+// @ExportFunction joystickInterface_isPresent = (instance: JoystickInterface, index: number): boolean
+Napi::Value joystickInterface_isPresent(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    int arg = 0;
+    
+    auto instance = (JoystickInterface*)castBigIntToVoidPointer(info[arg++]);
+    
+    auto param_index = asInt32(info[arg++]);
+    
+    auto result = instance->isPresent(param_index);
+
+    return newBoolean(result);
+};
+        
+
+// @ExportFunction joystickInterface_getAxes = (instance: JoystickInterface, index: number): number[]
+Napi::Value joystickInterface_getAxes(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    int arg = 0;
+    
+    auto instance = (JoystickInterface*)castBigIntToVoidPointer(info[arg++]);
+    
+    auto param_index = asInt32(info[arg++]);
+    
+    auto result = instance->getAxes(param_index);
+
+    auto resultArray = Napi::Array::New(env);
+    for(uint32_t arri = 0; arri < result.size(); arri++){
+        resultArray.Set(arri, newNumber(result[arri]));
+    }
+    return resultArray;
+};
+        
+
+// @ExportFunction keyboardInterface_isKeyDown = (instance: KeyboardInterface, key: number): boolean
+Napi::Value keyboardInterface_isKeyDown(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    int arg = 0;
+    
+    auto instance = (KeyboardInterface*)castBigIntToVoidPointer(info[arg++]);
+    
+    auto param_key = asInt32(info[arg++]);
+    
+    auto result = instance->isKeyDown(param_key);
+
+    return newBoolean(result);
+};
+        
+
+// @ExportFunction mouseInterface_setCursorMode = (instance: MouseInterface, mode: number): void
+Napi::Value mouseInterface_setCursorMode(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    int arg = 0;
+    
+    auto instance = (MouseInterface*)castBigIntToVoidPointer(info[arg++]);
+    
+    auto param_mode = asInt32(info[arg++]);
+    
+    instance->setCursorMode(param_mode);
+
+    return env.Undefined();
+};
+        
+
+// @ExportFunction mouseInterface_isButtonPressed = (instance: MouseInterface, button: number): boolean
+Napi::Value mouseInterface_isButtonPressed(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    int arg = 0;
+    
+    auto instance = (MouseInterface*)castBigIntToVoidPointer(info[arg++]);
+    
+    auto param_button = asInt32(info[arg++]);
+    
+    auto result = instance->isButtonPressed(param_button);
+
+    return newBoolean(result);
+};
+        
+
 // @ExportFunction attachmentInterface_getImage = (instance: AttachmentInterface): ImageInterface
 Napi::Value attachmentInterface_getImage(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
@@ -276,24 +380,6 @@ Napi::Value descriptorSetLayoutInterface_generateDescriptorSet(const Napi::Callb
     auto result = instance->generateDescriptorSet();
 
     return newPointer(result);
-};
-        
-
-// @ExportFunction genericBufferInterface_map = (instance: GenericBufferInterface, offset: number, size: number, data: ArrayBuffer): void
-Napi::Value genericBufferInterface_map(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    int arg = 0;
-    
-    auto instance = (GenericBufferInterface*)castBigIntToVoidPointer(info[arg++]);
-    
-    auto param_offset = asUint64(info[arg++]);
-auto param_size = asUint64(info[arg++]);
-auto param_data = (void**)castBigIntToVoidPointer(info[arg++]);
-    
-    instance->map(param_offset, param_size, param_data);
-
-    return env.Undefined();
 };
         
 
@@ -1173,109 +1259,5 @@ Napi::Value toolkitInterface_getMedia(const Napi::CallbackInfo& info) {
     auto result = instance->getMedia();
 
     return newPointer(result);
-};
-        
-
-// @ExportFunction joystickInterface_getButtonsStatus = (instance: JoystickInterface, index: number): boolean[]
-Napi::Value joystickInterface_getButtonsStatus(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    int arg = 0;
-    
-    auto instance = (JoystickInterface*)castBigIntToVoidPointer(info[arg++]);
-    
-    auto param_index = asInt32(info[arg++]);
-    
-    auto result = instance->getButtonsStatus(param_index);
-
-    auto resultArray = Napi::Array::New(env);
-    for(uint32_t arri = 0; arri < result.size(); arri++){
-        resultArray.Set(arri, newBoolean(result[arri]));
-    }
-    return resultArray;
-};
-        
-
-// @ExportFunction joystickInterface_isPresent = (instance: JoystickInterface, index: number): boolean
-Napi::Value joystickInterface_isPresent(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    int arg = 0;
-    
-    auto instance = (JoystickInterface*)castBigIntToVoidPointer(info[arg++]);
-    
-    auto param_index = asInt32(info[arg++]);
-    
-    auto result = instance->isPresent(param_index);
-
-    return newBoolean(result);
-};
-        
-
-// @ExportFunction joystickInterface_getAxes = (instance: JoystickInterface, index: number): number[]
-Napi::Value joystickInterface_getAxes(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    int arg = 0;
-    
-    auto instance = (JoystickInterface*)castBigIntToVoidPointer(info[arg++]);
-    
-    auto param_index = asInt32(info[arg++]);
-    
-    auto result = instance->getAxes(param_index);
-
-    auto resultArray = Napi::Array::New(env);
-    for(uint32_t arri = 0; arri < result.size(); arri++){
-        resultArray.Set(arri, newNumber(result[arri]));
-    }
-    return resultArray;
-};
-        
-
-// @ExportFunction keyboardInterface_isKeyDown = (instance: KeyboardInterface, key: number): boolean
-Napi::Value keyboardInterface_isKeyDown(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    int arg = 0;
-    
-    auto instance = (KeyboardInterface*)castBigIntToVoidPointer(info[arg++]);
-    
-    auto param_key = asInt32(info[arg++]);
-    
-    auto result = instance->isKeyDown(param_key);
-
-    return newBoolean(result);
-};
-        
-
-// @ExportFunction mouseInterface_setCursorMode = (instance: MouseInterface, mode: number): void
-Napi::Value mouseInterface_setCursorMode(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    int arg = 0;
-    
-    auto instance = (MouseInterface*)castBigIntToVoidPointer(info[arg++]);
-    
-    auto param_mode = asInt32(info[arg++]);
-    
-    instance->setCursorMode(param_mode);
-
-    return env.Undefined();
-};
-        
-
-// @ExportFunction mouseInterface_isButtonPressed = (instance: MouseInterface, button: number): boolean
-Napi::Value mouseInterface_isButtonPressed(const Napi::CallbackInfo& info) {
-    Napi::Env env = info.Env();
-
-    int arg = 0;
-    
-    auto instance = (MouseInterface*)castBigIntToVoidPointer(info[arg++]);
-    
-    auto param_button = asInt32(info[arg++]);
-    
-    auto result = instance->isButtonPressed(param_button);
-
-    return newBoolean(result);
 };
         
