@@ -172,7 +172,8 @@ export class NAPIAutoGenerateBindingPlugin implements CodeGenPlugin {
           } else {
             return `${param.name}: ${mapped}`;
           }
-        }).join(", ");
+        });
+        tsParamsList.unshift(`instance: ${className}`)
 
         const classReader = `auto instance = (${className}*)castBigIntToVoidPointer(info[arg++]);`
 
@@ -238,12 +239,12 @@ export class NAPIAutoGenerateBindingPlugin implements CodeGenPlugin {
           if(returnTypeIsVector && returnTypeIsPointer){
             const arrInit = `auto resultArray = Napi::Array::New(env);`
             const items = `for(uint32_t arri = 0; arri < result.size(); arri++){
-              resultArray.Set(arri, newPointer(result[arri]));
-            }`;
+        resultArray.Set(arri, newPointer(result[arri]));
+    }`;
 
             nativeReturnString = `${arrInit};
-            ${items}
-            return resultArray;`
+    ${items}
+    return resultArray;`
             tsReturnType = `${returnType}[]`;
           }
           if(returnTypeIsVector && !returnTypeIsPointer){
@@ -260,12 +261,12 @@ export class NAPIAutoGenerateBindingPlugin implements CodeGenPlugin {
               }
             }
             const items = `for(uint32_t arri = 0; arri < result.size(); arri++){
-              resultArray.Set(arri, ${converter}(result[arri]));
-            }`;
+        resultArray.Set(arri, ${converter}(result[arri]));
+    }`;
 
-            nativeReturnString = `${arrInit};
-            ${items}
-            return resultArray;`
+            nativeReturnString = `${arrInit}
+    ${items}
+    return resultArray;`
 
             const tsType = tsTypeMap[returnType as keyof typeof tsTypeMap]
             if(!tsType){
@@ -276,7 +277,7 @@ export class NAPIAutoGenerateBindingPlugin implements CodeGenPlugin {
           }
         }
 
-        const final = `// @ExportFunction ${exposedFunctionName} = (${tsParamsList}): ${tsReturnType}
+        const final = `// @ExportFunction ${exposedFunctionName} = (${tsParamsList.join(', ')}): ${tsReturnType}
 Napi::Value ${exposedFunctionName}(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
