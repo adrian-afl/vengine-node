@@ -205,7 +205,7 @@ namespace VEngine
             return v;
         }
 
-        VulkanRenderStage * VulkanRenderStage::copy(std::vector<AttachmentInterface*> ioutputImages)
+        VulkanRenderStage * VulkanRenderStage::copyWithNewOutput(std::vector<AttachmentInterface*> ioutputImages)
         {
             auto v = new VulkanRenderStage(device, semaphoreFactory, width, height, shaders, setLayouts, ioutputImages, cullMode);
             v->setSets(sets);

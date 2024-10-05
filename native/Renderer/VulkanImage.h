@@ -23,7 +23,7 @@ namespace VEngine
             VulkanImage(Internal::VulkanDevice* device, std::string path);
             VulkanImage(Internal::VulkanDevice* device, uint32_t width, uint32_t height, uint32_t channelCount, void * data);
             ~VulkanImage();
-            virtual AttachmentInterface* getAttachment(VEngineAttachmentBlending blending, bool clear, VEngineClearColorValue clearColor, bool forPresent) override;
+            virtual AttachmentInterface* getAttachment(VEngineAttachmentBlending blending, bool clear, ClearColorFloatsArray clearColor, bool forPresent) override;
             virtual bool isDepthBuffer() override;
             virtual void regenerateMipmaps() override;
             VkSampler getSampler();

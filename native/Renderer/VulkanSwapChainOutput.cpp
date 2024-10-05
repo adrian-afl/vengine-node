@@ -23,9 +23,9 @@ namespace VEngine
 
                 VulkanInternalImage* internalImage = new VulkanInternalImage(device, format, device->getSwapChain()->getImage(i), device->getSwapChain()->getImageView(i));
                 VulkanImage* img = new VulkanImage(device, internalImage, format);
-                VEngineClearColorValue clear = {};
+                ClearColorFloatsArray clear = {0, 0, 0, 0};
                 auto attachment = img->getAttachment(VEngineAttachmentBlending::None, true, clear, true);
-                outputStages[i] = stage->copy({ attachment });
+                outputStages[i] = stage->copyWithNewOutput({ attachment });
             }
             safedelete(stage); // this is clear but todo if its not confusing
             imageAvailableSemaphore = semaphoreFactory->build();

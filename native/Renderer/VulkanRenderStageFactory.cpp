@@ -18,24 +18,6 @@ namespace VEngine
         }
 
         RenderStageInterface * VulkanRenderStageFactory::build(int width, int height, std::vector<ShaderModuleInterface*> shaders,
-            std::vector<DescriptorSetLayoutInterface*> layouts)
-        {
-            return new VulkanRenderStage(device, semaphoreFactory, width, height, shaders, layouts, { }, VEngineCullMode::CullModeNone);
-        }
-
-        RenderStageInterface * VulkanRenderStageFactory::build(int width, int height, std::vector<ShaderModuleInterface*> shaders,
-            std::vector<DescriptorSetLayoutInterface*> layouts, std::vector<AttachmentInterface*> outputImages)
-        {
-            return new VulkanRenderStage(device, semaphoreFactory, width, height, shaders, layouts, outputImages, VEngineCullMode::CullModeNone);
-        }
-
-        RenderStageInterface * VulkanRenderStageFactory::build(int width, int height, std::vector<ShaderModuleInterface*> shaders,
-            std::vector<DescriptorSetLayoutInterface*> layouts, VEngineCullMode cullMode)
-        {
-            return new VulkanRenderStage(device, semaphoreFactory, width, height, shaders, layouts, { }, cullMode);
-        }
-
-        RenderStageInterface * VulkanRenderStageFactory::build(int width, int height, std::vector<ShaderModuleInterface*> shaders,
             std::vector<DescriptorSetLayoutInterface*> layouts, std::vector<AttachmentInterface*> outputImages, VEngineCullMode cullMode)
         {
             return new VulkanRenderStage(device, semaphoreFactory, width, height, shaders, layouts, outputImages, cullMode);

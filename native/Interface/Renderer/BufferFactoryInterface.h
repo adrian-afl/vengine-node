@@ -6,5 +6,5 @@ class GenericBufferInterface;
 class BufferFactoryInterface
 {
 public:
-    virtual GenericBufferInterface * build(VEngineBufferType type, uint64_t size) = 0;
+    virtual GenericBufferInterface* build(VEngineBufferType type, uint64_t size) = 0;
 };

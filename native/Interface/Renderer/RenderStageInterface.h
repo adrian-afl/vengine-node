@@ -21,6 +21,6 @@ public:
     virtual void submit(std::vector<SemaphoreInterface*> waitSemaphores) = 0;
     virtual void submitNoSemaphores(std::vector<SemaphoreInterface*> waitSemaphores) = 0;
     virtual RenderStageInterface* copy() = 0;
-    virtual RenderStageInterface* copy(std::vector<AttachmentInterface*> outputImages) = 0;
+    virtual RenderStageInterface* copyWithNewOutput(std::vector<AttachmentInterface*> outputImages) = 0;
     virtual SemaphoreInterface* getSignalSemaphore() = 0;
 };

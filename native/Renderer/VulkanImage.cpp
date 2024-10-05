@@ -180,7 +180,7 @@ namespace VEngine
             internalImage->regenerateMipmaps();
         }
 
-        AttachmentInterface* VulkanImage::getAttachment(VEngineAttachmentBlending blending, bool clear, VEngineClearColorValue clearColor, bool forPresent)
+        AttachmentInterface* VulkanImage::getAttachment(VEngineAttachmentBlending blending, bool clear, ClearColorFloatsArray clearColor, bool forPresent)
         {
             auto att = new VulkanAttachment(this, 
                 resolveFormat(format), VK_SAMPLE_COUNT_1_BIT,

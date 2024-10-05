@@ -7,7 +7,7 @@ namespace VEngine
 
         VulkanAttachment::VulkanAttachment(ImageInterface* image, VkFormat format, VkSampleCountFlagBits samples, VkAttachmentLoadOp loadop, VkAttachmentStoreOp storeop,
             VkAttachmentLoadOp stencilloadop, VkAttachmentStoreOp stencilstoreop, VkImageLayout initialLayout, VkImageLayout finalLayout,
-            VEngineAttachmentBlending blending, VEngineClearColorValue clearColor, bool clear)
+            VEngineAttachmentBlending blending, ClearColorFloatsArray clearColor, bool clear)
             : image(image), blending(blending), clearColor(clearColor), clear(clear)
         {
             description = {};
@@ -41,7 +41,7 @@ namespace VEngine
             return blending;
         }
 
-        VEngineClearColorValue VulkanAttachment::getClearColor()
+        ClearColorFloatsArray VulkanAttachment::getClearColor()
         {
             return clearColor;
         }

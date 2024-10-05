@@ -44,7 +44,7 @@ namespace VEngine
             int floatsCount = bytescount / 4;
             std::vector<GLfloat> flo(floats, floats + floatsCount);
 
-            fullScreenQuad = build(flo);
+            fullScreenQuad = loadFromArray(flo);
         }
 
 
@@ -52,7 +52,7 @@ namespace VEngine
         {
         }
 
-        Object3dInfoInterface * Object3dInfoFactory::build(std::string path)
+        Object3dInfoInterface * Object3dInfoFactory::loadFromFile(std::string path)
         {
             unsigned char* bytes;
             int bytescount = media->readBinary(path, &bytes);
@@ -60,10 +60,10 @@ namespace VEngine
             int floatsCount = bytescount / 4;
             std::vector<float> flo(floats, floats + floatsCount);
 
-            return build(flo);
+            return loadFromArray(flo);
         }
 
-        Object3dInfoInterface * Object3dInfoFactory::build(std::vector<float> rawData)
+        Object3dInfoInterface * Object3dInfoFactory::loadFromArray(std::vector<float> rawData)
         {
             return new Object3dInfo(device, rawData);
         }

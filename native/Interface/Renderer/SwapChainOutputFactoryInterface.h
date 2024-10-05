@@ -7,5 +7,5 @@ class RenderStageInterface;
 class SwapChainOutputFactoryInterface
 {
 public:
-    virtual SwapChainOutputInterface * build(RenderStageInterface* stage) = 0;
+    virtual SwapChainOutputInterface* build(RenderStageInterface* stage) = 0;
 };

@@ -11,19 +11,19 @@ namespace VEngine
         public:
             VulkanAttachment(ImageInterface* iimage, VkFormat format, VkSampleCountFlagBits samples, VkAttachmentLoadOp loadop, VkAttachmentStoreOp storeop,
                 VkAttachmentLoadOp stencilloadop, VkAttachmentStoreOp stencilstoreop, VkImageLayout initialLayout, VkImageLayout finalLayout,
-                VEngineAttachmentBlending blending, VEngineClearColorValue clearColor, bool clear);
+                VEngineAttachmentBlending blending, ClearColorFloatsArray clearColor, bool clear);
             ~VulkanAttachment();
             virtual ImageInterface* getImage() override;
             virtual VEngineAttachmentBlending getBlending() override;
             virtual bool isCleared() override;
             VkAttachmentDescription getDescription();
-            VEngineClearColorValue getClearColor();
+            ClearColorFloatsArray getClearColor();
             VkAttachmentReference getReference(uint32_t attachment, VkImageLayout layout);
         private:
             ImageInterface * image;
             VkAttachmentDescription description;
             VEngineAttachmentBlending blending;
-            VEngineClearColorValue clearColor;
+            ClearColorFloatsArray clearColor;
             bool clear = true;
         };
 

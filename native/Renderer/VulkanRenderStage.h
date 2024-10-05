@@ -34,7 +34,7 @@ namespace VEngine
             virtual void submit(std::vector<SemaphoreInterface*> waitSemaphores) override;
             virtual void submitNoSemaphores(std::vector<SemaphoreInterface*> waitSemaphores) override;
             virtual VulkanRenderStage* copy() override;
-            virtual VulkanRenderStage* copy(std::vector<AttachmentInterface*> outputImages) override;
+            virtual VulkanRenderStage* copyWithNewOutput(std::vector<AttachmentInterface*> outputImages) override;
             virtual SemaphoreInterface* getSignalSemaphore() override;
 
         private:

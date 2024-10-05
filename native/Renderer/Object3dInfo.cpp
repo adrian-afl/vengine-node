@@ -14,9 +14,8 @@ namespace VEngine
         */
 
         Object3dInfo::Object3dInfo(VulkanDevice * device, std::vector<float> &vboin)
-            : vbo(move(vboin))
         {
-            vertexBuffer = new VulkanVertexBuffer(device, vbo);
+            vertexBuffer = new VulkanVertexBuffer(device, vboin);
         }
 
         Object3dInfo::~Object3dInfo()
@@ -29,10 +28,6 @@ namespace VEngine
             return vertexBuffer;
         }
 
-        std::vector<float>& Object3dInfo::getVBO()
-        {
-            return vbo;
-        }
 
     }
 }

@@ -23,57 +23,17 @@ namespace VEngine
             return new VulkanImage(device, width, height, depth, false, format, usage, aspect, layout);
         }
 
-        ImageInterface * VulkanImageFactory::build(uint32_t width, uint32_t height, uint32_t depth, VEngineImageFormat format, VEngineImageUsage usage)
-        {
-            return build(width, height, depth, format, usage, resolveIsDepthBuffer(format) ? VEngineImageAspect::DepthAspect : VEngineImageAspect::ColorAspect, VEngineImageLayout::Preinitialized);
-        }
-
-        ImageInterface * VulkanImageFactory::build(uint32_t width, uint32_t height, VEngineImageFormat format, VEngineImageUsage usage, VEngineImageAspect aspect, VEngineImageLayout layout)
-        {
-            return build(width, height, 1, format, usage, aspect, layout);
-        }
-
-        ImageInterface * VulkanImageFactory::build(uint32_t width, uint32_t height, VEngineImageFormat format, VEngineImageUsage usage)
-        {
-            return build(width, height, 1, format, usage, resolveIsDepthBuffer(format) ? VEngineImageAspect::DepthAspect : VEngineImageAspect::ColorAspect, VEngineImageLayout::Preinitialized);
-        }
-
-        ImageInterface * VulkanImageFactory::build(uint32_t width, uint32_t height, VEngineImageFormat format, int usage)
-        {
-            return build(width, height, 1, format, static_cast<VEngineImageUsage>(usage), resolveIsDepthBuffer(format) ? VEngineImageAspect::DepthAspect : VEngineImageAspect::ColorAspect, VEngineImageLayout::Preinitialized);
-        }
-
         ImageInterface * VulkanImageFactory::buildMipmapped(uint32_t width, uint32_t height, uint32_t depth, VEngineImageFormat format, VEngineImageUsage usage, VEngineImageAspect aspect, VEngineImageLayout layout)
         {
             return new VulkanImage(device, width, height, depth, true, format, usage, aspect, layout);
         }
 
-        ImageInterface * VulkanImageFactory::buildMipmapped(uint32_t width, uint32_t height, uint32_t depth, VEngineImageFormat format, VEngineImageUsage usage)
-        {
-            return buildMipmapped(width, height, depth, format, usage, resolveIsDepthBuffer(format) ? VEngineImageAspect::DepthAspect : VEngineImageAspect::ColorAspect, VEngineImageLayout::Preinitialized);
-        }
-
-        ImageInterface * VulkanImageFactory::buildMipmapped(uint32_t width, uint32_t height, VEngineImageFormat format, VEngineImageUsage usage, VEngineImageAspect aspect, VEngineImageLayout layout)
-        {
-            return buildMipmapped(width, height, 1, format, usage, aspect, layout);
-        }
-
-        ImageInterface * VulkanImageFactory::buildMipmapped(uint32_t width, uint32_t height, VEngineImageFormat format, VEngineImageUsage usage)
-        {
-            return buildMipmapped(width, height, 1, format, usage, resolveIsDepthBuffer(format) ? VEngineImageAspect::DepthAspect : VEngineImageAspect::ColorAspect, VEngineImageLayout::Preinitialized);
-        }
-
-        ImageInterface * VulkanImageFactory::buildMipmapped(uint32_t width, uint32_t height, VEngineImageFormat format, int usage)
-        {
-            return buildMipmapped(width, height, 1, format, static_cast<VEngineImageUsage>(usage), resolveIsDepthBuffer(format) ? VEngineImageAspect::DepthAspect : VEngineImageAspect::ColorAspect, VEngineImageLayout::Preinitialized);
-        }
-
-        ImageInterface * VulkanImageFactory::build(std::string path)
+        ImageInterface * VulkanImageFactory::loadFromFile(std::string path)
         {
             return new VulkanImage(device, path);
         }
 
-        ImageInterface * VulkanImageFactory::build(uint32_t width, uint32_t height, uint32_t channelCount, void * data)
+        ImageInterface * VulkanImageFactory::createFromExistingData(uint32_t width, uint32_t height, uint32_t channelCount, void* data)
         {
             return new VulkanImage(device, width, height, channelCount, data);
         }

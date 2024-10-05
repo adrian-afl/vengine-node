@@ -1,28 +1,28 @@
 #pragma once
 
 enum VEngineShaderModuleType {
-    Vertex,
-    Fragment,
-    Compute
+    Vertex = 1,
+    Fragment = 2,
+    Compute = 3
 };
 
 enum VEngineCullMode {
-    CullModeNone,
-    CullModeFront,
-    CullModeBack
+    CullModeNone = 1,
+    CullModeFront = 2,
+    CullModeBack = 3
 };
 
 enum VEngineAttachmentBlending {
-    None,
-    Additive,
-    Alpha
+    None = 1,
+    Additive = 2,
+    Alpha = 3
 };
 
 enum VEngineBufferType {
-    BufferTypeUniform,
-    BufferTypeStorage,
-    BufferTypeTransferSource,
-    BufferTypeTransferDestination
+    BufferTypeUniform = 1,
+    BufferTypeStorage = 2,
+    BufferTypeTransferSource = 3,
+    BufferTypeTransferDestination = 4
 };
 
 enum VEngineImageUsage {
@@ -34,89 +34,85 @@ enum VEngineImageUsage {
 };
 
 enum VEngineImageAspect {
-    ColorAspect,
-    DepthAspect
+    ColorAspect = 1,
+    DepthAspect = 2
 };
 
 enum VEngineImageLayout {
-    Preinitialized,
-    Undefined
+    Preinitialized = 1,
+    Undefined = 2
 };
 
 enum VEngineDescriptorSetFieldType {
-    FieldTypeSampler,
-    FieldTypeUniformBuffer,
-    FieldTypeStorageBuffer,
-    FieldTypeStorageImage
+    FieldTypeSampler = 1,
+    FieldTypeUniformBuffer = 2,
+    FieldTypeStorageBuffer = 3,
+    FieldTypeStorageImage = 4
 };
 
 enum VEngineDescriptorSetFieldStage {
-    FieldStageAll,
-    FieldStageAllGraphics,
-    FieldStageCompute,
-    FieldStageVertex,
-    FieldStageFragment
+    FieldStageAll = 1,
+    FieldStageAllGraphics = 2,
+    FieldStageCompute = 3,
+    FieldStageVertex = 4,
+    FieldStageFragment = 5
 };
 
 enum VEngineImageFormat {
-    R8inorm,
-    RG8inorm,
-    RGBA8inorm,
+    R8inorm = 1,
+    RG8inorm = 2,
+    RGBA8inorm = 3,
 
-    R8unorm,
-    RG8unorm,
-    RGBA8unorm,
+    R8unorm = 4,
+    RG8unorm = 5,
+    RGBA8unorm = 6,
 
-    R16i,
-    RG16i,
-    RGBA16i,
+    R16i = 7,
+    RG16i = 8,
+    RGBA16i = 9,
 
-    R16u,
-    RG16u,
-    RGBA16u,
+    R16u = 10,
+    RG16u = 11,
+    RGBA16u = 12,
 
-    R16f,
-    RG16f,
-    RGBA16f,
+    R16f = 13,
+    RG16f = 14,
+    RGBA16f = 15,
 
-    R32i,
-    RG32i,
-    RGBA32i,
+    R32i = 16,
+    RG32i = 17,
+    RGBA32i = 18,
 
-    R32u,
-    RG32u,
-    RGBA32u,
+    R32u = 19,
+    RG32u = 20,
+    RGBA32u = 21,
 
-    R32f,
-    RG32f,
-    RGBA32f,
+    R32f = 22,
+    RG32f = 23,
+    RGBA32f = 24,
 
-    Depth16u,
-    Depth32f,
+    Depth16u = 25,
+    Depth32f = 26,
 
-    RGBA8srgb,
-    RGB5unormPack16,
-    RGBA8snorm,
-    ABGR8unormPack32,
-    ABGR8snormPack32,
-    ABGR8srgbPack32,
-    ARGB10unormPack32,
-    ABGR10unormPack32,
-    RGBA16unorm,
-    RGBA16snorm,
-    BGR11ufloatPack32,
-    BGR5unormPack16,
-    BGRA8snorm,
-    BGRA8unorm,
-    A1RGB5unormPack16,
-    RGBA4unormPack16,
-    BGRA4unormPack16,
-    RGB4A1unormPack16,
-    BGR5A1unormPack16
+    RGBA8srgb = 27,
+    RGB5unormPack16 = 28,
+    RGBA8snorm = 29,
+    ABGR8unormPack32 = 30,
+    ABGR8snormPack32 = 31,
+    ABGR8srgbPack32 = 32,
+    ARGB10unormPack32 = 33,
+    ABGR10unormPack32 = 34,
+    RGBA16unorm = 35,
+    RGBA16snorm = 36,
+    BGR11ufloatPack32 = 37,
+    BGR5unormPack16 = 38,
+    BGRA8snorm = 39,
+    BGRA8unorm = 40,
+    A1RGB5unormPack16 = 41,
+    RGBA4unormPack16 = 42,
+    BGRA4unormPack16 = 43,
+    RGB4A1unormPack16 = 44,
+    BGR5A1unormPack16 = 45
 };
 
-typedef union VEngineClearColorValue {
-    float       float32[4];
-    int32_t     int32[4];
-    uint32_t    uint32[4];
-} VEngineClearColorValue;
+#define ClearColorFloatsArray std::array<float, 4>

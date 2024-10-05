@@ -13,6 +13,7 @@
     "clean": "node-gyp clean",
     "configure": "node-gyp configure",
     "build": "node-gyp build -j 8",
+    "codegen": "tsx codegen/generate.ts",
     "prebuild": "tsx codegen/generate.ts",
     "prerebuild": "tsx codegen/generate.ts",
     "postbuild": "rimraf dist && tsc -P tsconfig.json && node afterBuild.js",

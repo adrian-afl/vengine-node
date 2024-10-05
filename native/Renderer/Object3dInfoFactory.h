@@ -19,8 +19,8 @@ namespace VEngine
             Object3dInfoFactory(Internal::VulkanDevice* device, MediaInterface* media);
             ~Object3dInfoFactory();
 
-            virtual Object3dInfoInterface* build(std::string path) override;
-            virtual Object3dInfoInterface* build(std::vector<float> rawData) override;
+            virtual Object3dInfoInterface* loadFromFile(std::string path) override;
+            virtual Object3dInfoInterface* loadFromArray(std::vector<float> rawData) override;
             virtual Object3dInfoInterface* getFullScreenQuad() override;
         private:
             Internal::VulkanDevice* device;

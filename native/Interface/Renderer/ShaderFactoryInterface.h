@@ -7,5 +7,5 @@ class ShaderModuleInterface;
 class ShaderFactoryInterface
 {
 public:
-    virtual ShaderModuleInterface * build(VEngineShaderModuleType type, std::string mediakey) = 0;
+    virtual ShaderModuleInterface* build(VEngineShaderModuleType type, std::string path) = 0;
 };

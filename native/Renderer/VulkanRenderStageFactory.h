@@ -20,20 +20,6 @@ namespace VEngine
 
             virtual RenderStageInterface* build(int width, int height,
                 std::vector<ShaderModuleInterface*> shaders,
-                std::vector<DescriptorSetLayoutInterface*> layouts) override;
-
-            virtual RenderStageInterface* build(int width, int height,
-                std::vector<ShaderModuleInterface*> shaders,
-                std::vector<DescriptorSetLayoutInterface*> layouts,
-                std::vector<AttachmentInterface*> outputImages) override;
-
-            virtual RenderStageInterface* build(int width, int height,
-                std::vector<ShaderModuleInterface*> shaders,
-                std::vector<DescriptorSetLayoutInterface*> layouts,
-                VEngineCullMode cullMode) override;
-
-            virtual RenderStageInterface* build(int width, int height,
-                std::vector<ShaderModuleInterface*> shaders,
                 std::vector<DescriptorSetLayoutInterface*> layouts,
                 std::vector<AttachmentInterface*> outputImages,
                 VEngineCullMode cullMode) override;
