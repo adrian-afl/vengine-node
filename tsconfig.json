@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2022",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "sourceMap": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "removeComments": true
+  },
+  "include": ["./node/**/*"],
+  "exclude": ["node_modules"]
+}

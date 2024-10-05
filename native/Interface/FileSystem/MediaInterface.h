@@ -1,0 +1,15 @@
+#pragma once
+#include <string>
+
+namespace VEngine
+{
+    namespace FileSystem
+    {
+        class MediaInterface
+        {
+        public:
+            virtual std::string readString(std::string key) = 0;
+            virtual int readBinary(std::string key, unsigned char** out_bytes) = 0;
+        };
+    }
+}

@@ -1,0 +1,9 @@
+build
+node_modules
+.idea
+.vscode
+bin
+dist
+native/.vs
+node_modules
+yarn-error.log

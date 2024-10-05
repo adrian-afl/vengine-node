@@ -1,0 +1,32 @@
+{
+  "name": "vengine-node",
+  "version": "1.0.0",
+  "main": "dist/dist.js",
+  "types": "dist/dist.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "bin/**/*"
+  ],
+  "scripts": {
+    "rebuild": "node-gyp rebuild -j 8",
+    "clean": "node-gyp clean",
+    "configure": "node-gyp configure",
+    "build": "node-gyp build -j 8",
+    "prebuild": "tsx codegen/generate.ts",
+    "prerebuild": "tsx codegen/generate.ts",
+    "postbuild": "rimraf dist && tsc -P tsconfig.json && node afterBuild.js",
+    "postrebuild": "rimraf dist && tsc -P tsconfig.json && node afterBuild.js",
+    "install" : "echo",
+    "test": "tsx --test \"**/*.spec.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "22.5.5",
+    "node-gyp": "^9.4.0",
+    "node-addon-api": "*",
+    "tsx": "^4.19.1",
+    "typescript": "^5.1.6",
+    "fast-scan-dir-recursive": "^0.0.4",
+    "rimraf": "5.0.5"
+  }
+}
