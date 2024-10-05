@@ -2,6 +2,8 @@
 #include "../Interface/Renderer/Enums.h"
 #include "../Interface/Renderer/RenderStageInterface.h"
 
+class SemaphoreFactoryInterface;
+
 namespace VEngine
 {
     namespace Renderer
@@ -14,7 +16,6 @@ namespace VEngine
             class VulkanGraphicsPipeline;
             class VulkanCommandBuffer;
         }
-        class SemaphoreFactoryInterface;
 
         class VulkanRenderStage : public RenderStageInterface
         {

@@ -2,6 +2,8 @@
 #include "../Interface/Renderer/Enums.h"
 #include "../Interface/Renderer/BufferFactoryInterface.h"
 
+class GenericBufferInterface;
+
 namespace VEngine
 {
     namespace Renderer
@@ -10,7 +12,6 @@ namespace VEngine
         {
             class VulkanDevice;
         }
-        class GenericBufferInterface;
 
         class VulkanBufferFactory : public BufferFactoryInterface
         {

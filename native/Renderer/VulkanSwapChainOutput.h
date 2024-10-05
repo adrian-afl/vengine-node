@@ -2,6 +2,8 @@
 #include "../Interface/Renderer/Enums.h"
 #include "../Interface/Renderer/SwapChainOutputInterface.h"
 
+class SemaphoreFactoryInterface;
+class Object3dInfoInterface;
 namespace VEngine
 {
     namespace Renderer
@@ -10,8 +12,6 @@ namespace VEngine
         {
             class VulkanDevice;
         }
-        class SemaphoreFactoryInterface;
-        class Object3dInfoInterface;
 
         class VulkanSwapChainOutput : public SwapChainOutputInterface
         {

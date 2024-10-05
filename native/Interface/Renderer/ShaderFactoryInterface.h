@@ -2,17 +2,10 @@
 #include <string>
 #include "Enums.h"
 
-namespace VEngine
+class ShaderModuleInterface;
+
+class ShaderFactoryInterface
 {
-    namespace Renderer
-    {
-        class ShaderModuleInterface;
-
-        class ShaderFactoryInterface
-        {
-        public:
-            virtual ShaderModuleInterface * build(VEngineShaderModuleType type, std::string mediakey) = 0;
-        };
-
-    }
-}
+public:
+    virtual ShaderModuleInterface * build(VEngineShaderModuleType type, std::string mediakey) = 0;
+};

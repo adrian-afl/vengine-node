@@ -1,6 +1,9 @@
 #pragma once
 #include "../Interface/Renderer/SwapChainOutputFactoryInterface.h"
 
+class SwapChainOutputInterface;
+class SemaphoreFactoryInterface;
+class RenderStageInterface;
 namespace VEngine
 {
     namespace Renderer
@@ -9,9 +12,6 @@ namespace VEngine
         {
             class VulkanDevice;
         }
-        class SwapChainOutputInterface;
-        class SemaphoreFactoryInterface;
-        class RenderStageInterface;
 
         class VulkanSwapChainOutputFactory : public SwapChainOutputFactoryInterface
         {

@@ -1,20 +1,13 @@
 #pragma once
 #include <cstdint>
 
-namespace VEngine
+class ImageInterface;
+class GenericBufferInterface;
+
+class DescriptorSetInterface
 {
-    namespace Renderer
-    {
-        class ImageInterface;
-        class GenericBufferInterface;
-
-        class DescriptorSetInterface
-        {
-        public:
-            virtual void bindImageViewSampler(uint32_t binding, ImageInterface* img) = 0;
-            virtual void bindImageStorage(uint32_t binding, ImageInterface* img) = 0;
-            virtual void bindBuffer(uint32_t binding, GenericBufferInterface* buffer) = 0;
-        };
-
-    }
-}
+public:
+    virtual void bindImageViewSampler(uint32_t binding, ImageInterface* img) = 0;
+    virtual void bindImageStorage(uint32_t binding, ImageInterface* img) = 0;
+    virtual void bindBuffer(uint32_t binding, GenericBufferInterface* buffer) = 0;
+};

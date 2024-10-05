@@ -7,10 +7,9 @@ namespace VEngine
 {
     namespace Renderer
     {
-        using namespace VEngine::FileSystem;
         using namespace VEngine::Renderer::Internal;
 
-        Object3dInfoFactory::Object3dInfoFactory(VulkanDevice* device, FileSystem::MediaInterface* media)
+        Object3dInfoFactory::Object3dInfoFactory(VulkanDevice* device, MediaInterface* media)
             : device(device), media(media)
         {
             unsigned char bytes[288] = {

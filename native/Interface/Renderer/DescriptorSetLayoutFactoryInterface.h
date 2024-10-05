@@ -1,16 +1,9 @@
 #pragma once
 
-namespace VEngine
+class DescriptorSetLayoutInterface;
+
+class DescriptorSetLayoutFactoryInterface
 {
-    namespace Renderer
-    {
-        class DescriptorSetLayoutInterface;
-
-        class DescriptorSetLayoutFactoryInterface
-        {
-        public:
-            virtual DescriptorSetLayoutInterface* build() = 0;
-        };
-
-    }
-}
+public:
+    virtual DescriptorSetLayoutInterface* build() = 0;
+};

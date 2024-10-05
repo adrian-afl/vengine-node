@@ -32,7 +32,7 @@ Napi::Value toolkitInterface_shouldCloseWindow(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
     int arg = 0;
-    auto toolkit = (VEngine::Renderer::ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
+    auto toolkit = (ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
 
     return newBoolean(toolkit->shouldCloseWindow());
 };
@@ -42,7 +42,7 @@ Napi::Value toolkitInterface_poolEvents(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
     int arg = 0;
-    auto toolkit = (VEngine::Renderer::ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
+    auto toolkit = (ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
 
     toolkit->poolEvents();
 
@@ -54,7 +54,7 @@ Napi::Value toolkitInterface_getExecutionTime(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
     int arg = 0;
-    auto toolkit = (VEngine::Renderer::ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
+    auto toolkit = (ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
 
     return newNumber(toolkit->getExecutionTime());
 };
@@ -64,7 +64,7 @@ Napi::Value toolkitInterface_getTotalAllocatedMemory(const Napi::CallbackInfo& i
     Napi::Env env = info.Env();
 
     int arg = 0;
-    auto toolkit = (VEngine::Renderer::ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
+    auto toolkit = (ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
 
     return newNumber(toolkit->getTotalAllocatedMemory());
 };
@@ -74,7 +74,7 @@ Napi::Value toolkitInterface_waitQueueIdle(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
     int arg = 0;
-    auto toolkit = (VEngine::Renderer::ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
+    auto toolkit = (ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
 
     toolkit->waitQueueIdle();
 
@@ -86,7 +86,7 @@ Napi::Value toolkitInterface_waitDeviceIdle(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
     int arg = 0;
-    auto toolkit = (VEngine::Renderer::ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
+    auto toolkit = (ToolkitInterface*)castBigIntToVoidPointer(info[arg++]);
 
     toolkit->waitDeviceIdle();
 

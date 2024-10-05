@@ -1,6 +1,7 @@
 #pragma once
 #include "../Interface/Renderer/SemaphoreFactoryInterface.h"
 
+class SemaphoreInterface;
 namespace VEngine
 {
     namespace Renderer
@@ -9,7 +10,6 @@ namespace VEngine
         {
             class VulkanDevice;
         }
-        class SemaphoreInterface;
 
         class VulkanSemaphoreFactory : public SemaphoreFactoryInterface
         {

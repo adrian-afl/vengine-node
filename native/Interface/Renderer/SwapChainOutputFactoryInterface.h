@@ -1,18 +1,11 @@
 #pragma once
 class VulkanDevice;
 
-namespace VEngine
+class SwapChainOutputInterface;
+class RenderStageInterface;
+
+class SwapChainOutputFactoryInterface
 {
-    namespace Renderer
-    {
-        class SwapChainOutputInterface;
-        class RenderStageInterface;
-
-        class SwapChainOutputFactoryInterface
-        {
-        public:
-            virtual SwapChainOutputInterface * build(RenderStageInterface* stage) = 0;
-        };
-
-    }
-}
+public:
+    virtual SwapChainOutputInterface * build(RenderStageInterface* stage) = 0;
+};

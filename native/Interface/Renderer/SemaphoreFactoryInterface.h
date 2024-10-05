@@ -1,16 +1,9 @@
 #pragma once
 
-namespace VEngine
+class SemaphoreInterface;
+
+class SemaphoreFactoryInterface
 {
-    namespace Renderer
-    {
-        class SemaphoreInterface;
-
-        class SemaphoreFactoryInterface
-        {
-        public:
-            virtual SemaphoreInterface* build() = 0;
-        };
-
-    }
-}
+public:
+    virtual SemaphoreInterface* build() = 0;
+};

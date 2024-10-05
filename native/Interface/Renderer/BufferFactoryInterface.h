@@ -1,17 +1,10 @@
 #pragma once
 #include "Enums.h"
 
-namespace VEngine
+class GenericBufferInterface;
+
+class BufferFactoryInterface
 {
-    namespace Renderer
-    {
-        class GenericBufferInterface;
-
-        class BufferFactoryInterface
-        {
-        public:
-            virtual GenericBufferInterface * build(VEngineBufferType type, uint64_t size) = 0;
-        };
-
-    }
-}
+public:
+    virtual GenericBufferInterface * build(VEngineBufferType type, uint64_t size) = 0;
+};

@@ -1,14 +1,9 @@
 #pragma once
 #include "Enums.h"
 
-namespace VEngine
+
+class ShaderModuleInterface
 {
-    namespace Renderer
-    {
-        class ShaderModuleInterface
-        {
-        public:
-            virtual VEngineShaderModuleType getType() = 0;
-        };
-    }
-}
+public:
+    virtual VEngineShaderModuleType getType() = 0;
+};

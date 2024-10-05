@@ -2,13 +2,11 @@
 #include "../Interface/Renderer/Enums.h"
 #include "../Interface/Renderer/ShaderFactoryInterface.h"
 
+class MediaInterface;
+class ShaderModuleInterface;
+
 namespace VEngine
 {
-    namespace FileSystem
-    {
-        class MediaInterface;
-    }
-
     namespace Renderer
     {
         namespace Internal
@@ -16,7 +14,6 @@ namespace VEngine
             class VulkanDevice;
         }
 
-        class ShaderModuleInterface;
 
         class VulkanShaderFactory : public ShaderFactoryInterface
         {
@@ -27,7 +24,7 @@ namespace VEngine
             virtual ShaderModuleInterface* build(VEngineShaderModuleType type, std::string path) override;
         private:
             Internal::VulkanDevice * device;
-            FileSystem::MediaInterface* media;
+            MediaInterface* media;
         };
 
     }

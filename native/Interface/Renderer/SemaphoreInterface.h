@@ -1,12 +1,6 @@
 #pragma once
-namespace VEngine
+
+class SemaphoreInterface
 {
-    namespace Renderer
-    {
-        class SemaphoreInterface
-        {
 
-        };
-
-    }
-}
+};

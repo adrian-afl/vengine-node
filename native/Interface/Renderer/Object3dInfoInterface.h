@@ -1,15 +1,8 @@
 #pragma once
 #include <vector>
 
-namespace VEngine
+class Object3dInfoInterface
 {
-    namespace Renderer
-    {
-        class Object3dInfoInterface
-        {
-        public:
-            virtual std::vector<float> & getVBO() = 0;
-        };
-
-    }
-}
+public:
+    virtual std::vector<float> & getVBO() = 0;
+};

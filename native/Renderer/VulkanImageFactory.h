@@ -2,13 +2,9 @@
 #include "../Interface/Renderer/Enums.h"
 #include "../Interface/Renderer/ImageFactoryInterface.h"
 
+class MediaInterface;
 namespace VEngine
 {
-    namespace FileSystem
-    {
-        class MediaInterface;
-    }
-
     namespace Renderer
     {
         namespace Internal
@@ -19,7 +15,7 @@ namespace VEngine
         class VulkanImageFactory : public ImageFactoryInterface
         {
         public:
-            VulkanImageFactory(Internal::VulkanDevice* device, FileSystem::MediaInterface * media);
+            VulkanImageFactory(Internal::VulkanDevice* device, MediaInterface * media);
             ~VulkanImageFactory();
 
             virtual ImageInterface* build(uint32_t width, uint32_t height, uint32_t depth,
@@ -61,7 +57,7 @@ namespace VEngine
 
         private:
             Internal::VulkanDevice * device;
-            FileSystem::MediaInterface * media;
+            MediaInterface * media;
         };
 
 

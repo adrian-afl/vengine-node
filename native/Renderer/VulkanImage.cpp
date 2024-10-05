@@ -11,7 +11,6 @@ namespace VEngine
     namespace Renderer
     {
         using namespace VEngine::Renderer::Internal;
-        using namespace VEngine::FileSystem;
 
         VulkanImage::VulkanImage(VulkanDevice * device, uint32_t width, uint32_t height, uint32_t depth, bool mipmapped,
             VEngineImageFormat format, VEngineImageUsage usage, VEngineImageAspect aspect, VEngineImageLayout layout)
@@ -190,26 +189,6 @@ namespace VEngine
                 VK_IMAGE_LAYOUT_UNDEFINED, forPresent ? VK_IMAGE_LAYOUT_PRESENT_SRC_KHR : (isDepthBuffer() ? VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL : VK_IMAGE_LAYOUT_GENERAL),
                 blending, clearColor, clear);
             return att;
-        }
-
-        AttachmentInterface * VulkanImage::getAttachment(VEngineAttachmentBlending blending, bool clear, VEngineClearColorValue clearColor)
-        {
-            return getAttachment(blending, clear, clearColor, false);
-        }
-
-        AttachmentInterface * VulkanImage::getAttachment(VEngineAttachmentBlending blending, bool clear)
-        {
-            return getAttachment(blending, clear, { {} }, false);
-        }
-
-        AttachmentInterface * VulkanImage::getAttachment(VEngineAttachmentBlending blending, VEngineClearColorValue clearColor)
-        {
-            return getAttachment(blending, true, clearColor, false);
-        }
-
-        AttachmentInterface * VulkanImage::getAttachment(VEngineAttachmentBlending blending)
-        {
-            return getAttachment(blending, true, { {0.0f, 0.0f, 0.0f, 0.0f} }, false);
         }
 
         bool VulkanImage::isDepthBuffer()

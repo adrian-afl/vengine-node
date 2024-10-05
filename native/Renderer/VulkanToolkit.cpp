@@ -155,22 +155,22 @@ namespace VEngine
             return vulkanSemaphoreFactory;
         }
 
-        Input::KeyboardInterface * VulkanToolkit::getKeyboard()
+        KeyboardInterface * VulkanToolkit::getKeyboard()
         {
             return keyboard;
         }
 
-        Input::MouseInterface * VulkanToolkit::getMouse()
+        MouseInterface * VulkanToolkit::getMouse()
         {
             return mouse;
         }
 
-        Input::JoystickInterface * VulkanToolkit::getJoystick()
+        JoystickInterface * VulkanToolkit::getJoystick()
         {
             return joystick;
         }
 
-        FileSystem::MediaInterface * VulkanToolkit::getMedia()
+        MediaInterface * VulkanToolkit::getMedia()
         {
             return media;
         }

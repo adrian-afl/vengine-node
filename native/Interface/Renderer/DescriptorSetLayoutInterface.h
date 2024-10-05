@@ -1,18 +1,11 @@
 #pragma once
 #include "Enums.h" 
 
-namespace VEngine
+class DescriptorSetInterface;
+
+class DescriptorSetLayoutInterface
 {
-    namespace Renderer
-    {
-        class DescriptorSetInterface;
-
-        class DescriptorSetLayoutInterface
-        {
-        public:
-            virtual void addField(VEngineDescriptorSetFieldType fieldType, VEngineDescriptorSetFieldStage fieldAccesibility) = 0;
-            virtual DescriptorSetInterface* generateDescriptorSet() = 0;
-        };
-
-    }
-}
+public:
+    virtual void addField(VEngineDescriptorSetFieldType fieldType, VEngineDescriptorSetFieldStage fieldAccesibility) = 0;
+    virtual DescriptorSetInterface* generateDescriptorSet() = 0;
+};

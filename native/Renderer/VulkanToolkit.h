@@ -1,33 +1,28 @@
 #pragma once
 #include "../Interface/Renderer/ToolkitInterface.h"
 
+class KeyboardInterface;
+class MouseInterface;
+class JoystickInterface;
+class Object3dInfoFactoryInterface;
+class ShaderFactoryInterface;
+class DescriptorSetLayoutFactoryInterface;
+class RenderStageFactoryInterface;
+class ComputeStageFactoryInterface;
+class BufferFactoryInterface;
+class ImageFactoryInterface;
+class SwapChainOutputFactoryInterface;
+
+class MediaInterface;
+
 namespace VEngine
 {
-    namespace Input
-    {
-        class KeyboardInterface;
-        class MouseInterface;
-        class JoystickInterface;
-    }
-    namespace FileSystem
-    {
-        class MediaInterface;
-    }
     namespace Renderer
     {
         namespace Internal
         {
             class VulkanDevice;
         }
-
-        class Object3dInfoFactoryInterface;
-        class ShaderFactoryInterface;
-        class DescriptorSetLayoutFactoryInterface;
-        class RenderStageFactoryInterface;
-        class ComputeStageFactoryInterface;
-        class BufferFactoryInterface;
-        class ImageFactoryInterface;
-        class SwapChainOutputFactoryInterface;
 
         class VulkanToolkit : public ToolkitInterface
         {
@@ -51,14 +46,14 @@ namespace VEngine
             virtual ImageFactoryInterface* getImageFactory() override;
             virtual SwapChainOutputFactoryInterface* getSwapChainOutputFactory() override;
             virtual SemaphoreFactoryInterface* getSemaphoreFactory() override;
-            virtual Input::KeyboardInterface* getKeyboard() override;
-            virtual Input::MouseInterface* getMouse() override;
-            virtual Input::JoystickInterface* getJoystick() override;
-            virtual FileSystem::MediaInterface* getMedia() override;
+            virtual KeyboardInterface* getKeyboard() override;
+            virtual MouseInterface* getMouse() override;
+            virtual JoystickInterface* getJoystick() override;
+            virtual MediaInterface* getMedia() override;
 
         private:
             Internal::VulkanDevice * device;
-            FileSystem::MediaInterface* media;
+            MediaInterface* media;
             int windowWidth;
             int windowHeight;
 
@@ -71,9 +66,9 @@ namespace VEngine
             BufferFactoryInterface* vulkanBufferFactory;
             ImageFactoryInterface* vulkanImageFactory;
             SwapChainOutputFactoryInterface* vulkanSwapChainOutputFactory;
-            Input::KeyboardInterface* keyboard;
-            Input::MouseInterface* mouse;
-            Input::JoystickInterface* joystick;
+            KeyboardInterface* keyboard;
+            MouseInterface* mouse;
+            JoystickInterface* joystick;
         };
 
     }

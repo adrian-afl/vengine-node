@@ -8,9 +8,8 @@ namespace VEngine
     namespace Renderer
     {
         using namespace VEngine::Renderer::Internal;
-        using namespace VEngine::FileSystem;
 
-        VulkanImageFactory::VulkanImageFactory(VulkanDevice* device, FileSystem::MediaInterface * media)
+        VulkanImageFactory::VulkanImageFactory(VulkanDevice* device, MediaInterface * media)
             : device(device), media(media)
         {
         }

@@ -8,7 +8,6 @@ namespace VEngine
     namespace Renderer
     {
         using namespace VEngine::Renderer::Internal;
-        using namespace VEngine::FileSystem;
 
         VulkanShaderFactory::VulkanShaderFactory(VulkanDevice* device)
             : device(device)

@@ -1,6 +1,11 @@
 #pragma once
 #include "../Interface/Renderer/ComputeStageInterface.h"
 
+class SemaphoreInterface;
+class SemaphoreFactoryInterface;
+class ShaderModuleInterface;
+class DescriptorSetLayoutInterface;
+
 namespace VEngine
 {
     namespace Renderer
@@ -11,10 +16,6 @@ namespace VEngine
             class VulkanCommandBuffer;
             class VulkanGraphicsPipeline;
         }
-        class SemaphoreInterface;
-        class SemaphoreFactoryInterface;
-        class ShaderModuleInterface;
-        class DescriptorSetLayoutInterface;
 
         class VulkanComputeStage : public ComputeStageInterface
         {

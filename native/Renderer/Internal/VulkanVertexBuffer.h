@@ -1,10 +1,10 @@
 #pragma once
 #include "VulkanSingleAllocation.h"
+class DescriptorSetInterface;
 namespace VEngine
 {
     namespace Renderer
     {
-        class DescriptorSetInterface;
         namespace Internal
         {
             class VulkanDevice;
