@@ -282,9 +282,10 @@ Napi::Value ${exposedFunctionName}(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
     int arg = 0;
-    ${nativeParamsReaders}
     
     ${classReader}
+    
+    ${nativeParamsReaders}
     
     ${callString}
 
