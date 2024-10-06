@@ -7,3 +7,4 @@ dist
 native/.vs
 node_modules
 yarn-error.log
+/shaders/tmp

@@ -13,6 +13,7 @@
     "clean": "node-gyp clean",
     "configure": "node-gyp configure",
     "build": "node-gyp build -j 8",
+    "glslc": "tsx codegen/compileShaders.ts --dir shaders",
     "codegen": "tsx codegen/generate.ts",
     "prebuild": "tsx codegen/generate.ts",
     "prerebuild": "tsx codegen/generate.ts",
