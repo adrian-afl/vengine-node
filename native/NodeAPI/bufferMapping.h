@@ -1,4 +1,4 @@
-// @ExportFunction genericBufferInterface_map = (instance: GenericBufferInterface, offset: number, size: number): ArrayBuffer
+// @ExportFunction genericBufferInterface_map = (instance: GenericBufferInterfacePointer, offset: number, size: number): ArrayBuffer
 Napi::Value genericBufferInterface_map(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 

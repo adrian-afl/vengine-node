@@ -13,7 +13,7 @@ import {
   genericBufferInterface_map,
   genericBufferInterface_unmap,
   joystickInterface_isPresent,
-  shaderFactoryInterface_build,
+  shaderFactoryInterface_build, ToolkitInterface,
   toolkitInterface_getBufferFactory,
   toolkitInterface_getComputeStageFactory,
   toolkitInterface_getDescriptorSetLayoutFactory,
@@ -37,7 +37,7 @@ describe("vulkan toolkit", () => {
     const isPresent = joystickInterface_isPresent(joystick, 0);
     assert.equal(isPresent, false);
   });
-  
+
   it("computes stuff", () => {
     const toolkit = toolkitInterface_new_headless(true);
 
@@ -76,5 +76,41 @@ describe("vulkan toolkit", () => {
     assert.equal(ptr2[2], 60);
     assert.equal(ptr2[3], 80);
     genericBufferInterface_unmap(buffer);
+  })
+
+  it("computes stuff class style", () => {
+    const toolkitPointer = toolkitInterface_new_headless(true);
+    const toolkit = new ToolkitInterface(toolkitPointer);
+
+    const shader = toolkit.getShaderFactory().build(VEngineShaderModuleType.Compute, "shaders/compiled/example-compute.comp.spv");
+
+    // Build the layout of data that will be available in the shader runtime
+    const layout = toolkit.getDescriptorSetLayoutFactory().build();
+    layout.addField(VEngineDescriptorSetFieldType.FieldTypeStorageBuffer, VEngineDescriptorSetFieldStage.FieldStageCompute)
+
+    const stage = toolkit.getComputeStageFactory().build(shader.pointer, [layout.pointer]);
+
+    const buffer = toolkit.getBufferFactory().build(VEngineBufferType.BufferTypeStorage, 4 * 20);
+
+    const set = layout.generateDescriptorSet();
+    set.bindBuffer(0, buffer.pointer);
+
+    const ptr = new Float32Array(genericBufferInterface_map(buffer.pointer, 0, 4 * 4));
+    ptr.set([1, 2, 3, 4], 0);
+    genericBufferInterface_unmap(buffer.pointer);
+
+    stage.beginRecording();
+    stage.dispatch([set.pointer], 1, 1, 1);
+    stage.endRecording()
+    stage.submitNoSemaphores([]);
+
+    toolkit.waitQueueIdle()
+
+    const ptr2 = new Float32Array(genericBufferInterface_map(buffer.pointer, 0, 4 * 4));
+    assert.equal(ptr2[0], 20);
+    assert.equal(ptr2[1], 40);
+    assert.equal(ptr2[2], 60);
+    assert.equal(ptr2[3], 80);
+    genericBufferInterface_unmap(buffer.pointer);
   })
 });

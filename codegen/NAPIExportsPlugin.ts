@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 import { CodeGenFile, CodeGenPlugin } from "./generate";
+import {NAPIAutoGenerateBindingPlugin} from "./NAPIAutoGenerateBindingPlugin";
 
 interface ExportedFunction {
   name: string;
@@ -11,6 +12,12 @@ interface ExportedFunction {
 }
 
 export class NAPIExportsPlugin implements CodeGenPlugin {
+
+  public constructor(private readonly bindingGenPlugin:NAPIAutoGenerateBindingPlugin) {
+
+  }
+
+
   public name = "NAPIExports";
   public scanDirs = ["native/NodeAPI"];
 
@@ -67,6 +74,8 @@ export class NAPIExportsPlugin implements CodeGenPlugin {
       path.join(this.nativePath, "nativeExports.h"),
       nativeLines.join("\n")
     );
+
+    nodeLines.push(this.bindingGenPlugin.generateTSClasses());
 
     fs.writeFileSync(path.join(this.nodePath, "native.ts"), nodeLines.join("\n"));
   }

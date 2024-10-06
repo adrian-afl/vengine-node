@@ -1,4 +1,4 @@
-// @ExportFunction joystickInterface_getButtonsStatus = (instance: JoystickInterface, index: number): boolean[]
+// @ExportFunction joystickInterface_getButtonsStatus = (instance: JoystickInterfacePointer, index: number): boolean[]
 Napi::Value joystickInterface_getButtonsStatus(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -18,7 +18,7 @@ Napi::Value joystickInterface_getButtonsStatus(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction joystickInterface_isPresent = (instance: JoystickInterface, index: number): boolean
+// @ExportFunction joystickInterface_isPresent = (instance: JoystickInterfacePointer, index: number): boolean
 Napi::Value joystickInterface_isPresent(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -34,7 +34,7 @@ Napi::Value joystickInterface_isPresent(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction joystickInterface_getAxes = (instance: JoystickInterface, index: number): number[]
+// @ExportFunction joystickInterface_getAxes = (instance: JoystickInterfacePointer, index: number): number[]
 Napi::Value joystickInterface_getAxes(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -54,7 +54,7 @@ Napi::Value joystickInterface_getAxes(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction keyboardInterface_isKeyDown = (instance: KeyboardInterface, key: number): boolean
+// @ExportFunction keyboardInterface_isKeyDown = (instance: KeyboardInterfacePointer, key: number): boolean
 Napi::Value keyboardInterface_isKeyDown(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -70,7 +70,7 @@ Napi::Value keyboardInterface_isKeyDown(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction mouseInterface_setCursorMode = (instance: MouseInterface, mode: number): void
+// @ExportFunction mouseInterface_setCursorMode = (instance: MouseInterfacePointer, mode: number): void
 Napi::Value mouseInterface_setCursorMode(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -86,7 +86,7 @@ Napi::Value mouseInterface_setCursorMode(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction mouseInterface_isButtonPressed = (instance: MouseInterface, button: number): boolean
+// @ExportFunction mouseInterface_isButtonPressed = (instance: MouseInterfacePointer, button: number): boolean
 Napi::Value mouseInterface_isButtonPressed(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -102,7 +102,7 @@ Napi::Value mouseInterface_isButtonPressed(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction attachmentInterface_getImage = (instance: AttachmentInterface): ImageInterface
+// @ExportFunction attachmentInterface_getImage = (instance: AttachmentInterfacePointer): ImageInterfacePointer
 Napi::Value attachmentInterface_getImage(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -118,7 +118,7 @@ Napi::Value attachmentInterface_getImage(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction attachmentInterface_getBlending = (instance: AttachmentInterface): VEngineAttachmentBlending
+// @ExportFunction attachmentInterface_getBlending = (instance: AttachmentInterfacePointer): VEngineAttachmentBlending
 Napi::Value attachmentInterface_getBlending(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -134,7 +134,7 @@ Napi::Value attachmentInterface_getBlending(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction attachmentInterface_isCleared = (instance: AttachmentInterface): boolean
+// @ExportFunction attachmentInterface_isCleared = (instance: AttachmentInterfacePointer): boolean
 Napi::Value attachmentInterface_isCleared(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -150,7 +150,7 @@ Napi::Value attachmentInterface_isCleared(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction bufferFactoryInterface_build = (instance: BufferFactoryInterface, type: VEngineBufferType, size: number): GenericBufferInterface
+// @ExportFunction bufferFactoryInterface_build = (instance: BufferFactoryInterfacePointer, type: VEngineBufferType, size: number): GenericBufferInterfacePointer
 Napi::Value bufferFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -167,7 +167,7 @@ auto param_size = asUint64(info[arg++]);
 };
         
 
-// @ExportFunction computeStageFactoryInterface_build = (instance: ComputeStageFactoryInterface, shader: ShaderModuleInterface, layouts: DescriptorSetLayoutInterface[]): ComputeStageInterface
+// @ExportFunction computeStageFactoryInterface_build = (instance: ComputeStageFactoryInterfacePointer, shader: ShaderModuleInterfacePointer, layouts: DescriptorSetLayoutInterfacePointer[]): ComputeStageInterfacePointer
 Napi::Value computeStageFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -184,7 +184,7 @@ auto param_layouts = asVectorOfPointers<DescriptorSetLayoutInterface>(info[arg++
 };
         
 
-// @ExportFunction computeStageInterface_beginRecording = (instance: ComputeStageInterface): void
+// @ExportFunction computeStageInterface_beginRecording = (instance: ComputeStageInterfacePointer): void
 Napi::Value computeStageInterface_beginRecording(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -200,7 +200,7 @@ Napi::Value computeStageInterface_beginRecording(const Napi::CallbackInfo& info)
 };
         
 
-// @ExportFunction computeStageInterface_endRecording = (instance: ComputeStageInterface): void
+// @ExportFunction computeStageInterface_endRecording = (instance: ComputeStageInterfacePointer): void
 Napi::Value computeStageInterface_endRecording(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -216,7 +216,7 @@ Napi::Value computeStageInterface_endRecording(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction computeStageInterface_dispatch = (instance: ComputeStageInterface, sets: DescriptorSetInterface[], groupX: number, groupY: number, groupZ: number): void
+// @ExportFunction computeStageInterface_dispatch = (instance: ComputeStageInterfacePointer, sets: DescriptorSetInterfacePointer[], groupX: number, groupY: number, groupZ: number): void
 Napi::Value computeStageInterface_dispatch(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -235,7 +235,7 @@ auto param_groupZ = asUint32(info[arg++]);
 };
         
 
-// @ExportFunction computeStageInterface_submit = (instance: ComputeStageInterface, waitSemaphores: SemaphoreInterface[]): void
+// @ExportFunction computeStageInterface_submit = (instance: ComputeStageInterfacePointer, waitSemaphores: SemaphoreInterfacePointer[]): void
 Napi::Value computeStageInterface_submit(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -251,7 +251,7 @@ Napi::Value computeStageInterface_submit(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction computeStageInterface_submitNoSemaphores = (instance: ComputeStageInterface, waitSemaphores: SemaphoreInterface[]): void
+// @ExportFunction computeStageInterface_submitNoSemaphores = (instance: ComputeStageInterfacePointer, waitSemaphores: SemaphoreInterfacePointer[]): void
 Napi::Value computeStageInterface_submitNoSemaphores(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -267,7 +267,7 @@ Napi::Value computeStageInterface_submitNoSemaphores(const Napi::CallbackInfo& i
 };
         
 
-// @ExportFunction computeStageInterface_getSignalSemaphore = (instance: ComputeStageInterface): SemaphoreInterface
+// @ExportFunction computeStageInterface_getSignalSemaphore = (instance: ComputeStageInterfacePointer): SemaphoreInterfacePointer
 Napi::Value computeStageInterface_getSignalSemaphore(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -283,7 +283,7 @@ Napi::Value computeStageInterface_getSignalSemaphore(const Napi::CallbackInfo& i
 };
         
 
-// @ExportFunction descriptorSetInterface_bindImageViewSampler = (instance: DescriptorSetInterface, binding: number, img: ImageInterface): void
+// @ExportFunction descriptorSetInterface_bindImageViewSampler = (instance: DescriptorSetInterfacePointer, binding: number, img: ImageInterfacePointer): void
 Napi::Value descriptorSetInterface_bindImageViewSampler(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -300,7 +300,7 @@ auto param_img = (ImageInterface*)castBigIntToVoidPointer(info[arg++]);
 };
         
 
-// @ExportFunction descriptorSetInterface_bindImageStorage = (instance: DescriptorSetInterface, binding: number, img: ImageInterface): void
+// @ExportFunction descriptorSetInterface_bindImageStorage = (instance: DescriptorSetInterfacePointer, binding: number, img: ImageInterfacePointer): void
 Napi::Value descriptorSetInterface_bindImageStorage(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -317,7 +317,7 @@ auto param_img = (ImageInterface*)castBigIntToVoidPointer(info[arg++]);
 };
         
 
-// @ExportFunction descriptorSetInterface_bindBuffer = (instance: DescriptorSetInterface, binding: number, buffer: GenericBufferInterface): void
+// @ExportFunction descriptorSetInterface_bindBuffer = (instance: DescriptorSetInterfacePointer, binding: number, buffer: GenericBufferInterfacePointer): void
 Napi::Value descriptorSetInterface_bindBuffer(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -334,7 +334,7 @@ auto param_buffer = (GenericBufferInterface*)castBigIntToVoidPointer(info[arg++]
 };
         
 
-// @ExportFunction descriptorSetLayoutFactoryInterface_build = (instance: DescriptorSetLayoutFactoryInterface): DescriptorSetLayoutInterface
+// @ExportFunction descriptorSetLayoutFactoryInterface_build = (instance: DescriptorSetLayoutFactoryInterfacePointer): DescriptorSetLayoutInterfacePointer
 Napi::Value descriptorSetLayoutFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -350,7 +350,7 @@ Napi::Value descriptorSetLayoutFactoryInterface_build(const Napi::CallbackInfo& 
 };
         
 
-// @ExportFunction descriptorSetLayoutInterface_addField = (instance: DescriptorSetLayoutInterface, fieldType: VEngineDescriptorSetFieldType, fieldAccesibility: VEngineDescriptorSetFieldStage): void
+// @ExportFunction descriptorSetLayoutInterface_addField = (instance: DescriptorSetLayoutInterfacePointer, fieldType: VEngineDescriptorSetFieldType, fieldAccesibility: VEngineDescriptorSetFieldStage): void
 Napi::Value descriptorSetLayoutInterface_addField(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -367,7 +367,7 @@ auto param_fieldAccesibility = (VEngineDescriptorSetFieldStage)asInt32(info[arg+
 };
         
 
-// @ExportFunction descriptorSetLayoutInterface_generateDescriptorSet = (instance: DescriptorSetLayoutInterface): DescriptorSetInterface
+// @ExportFunction descriptorSetLayoutInterface_generateDescriptorSet = (instance: DescriptorSetLayoutInterfacePointer): DescriptorSetInterfacePointer
 Napi::Value descriptorSetLayoutInterface_generateDescriptorSet(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -383,7 +383,7 @@ Napi::Value descriptorSetLayoutInterface_generateDescriptorSet(const Napi::Callb
 };
         
 
-// @ExportFunction genericBufferInterface_unmap = (instance: GenericBufferInterface): void
+// @ExportFunction genericBufferInterface_unmap = (instance: GenericBufferInterfacePointer): void
 Napi::Value genericBufferInterface_unmap(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -399,7 +399,7 @@ Napi::Value genericBufferInterface_unmap(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction genericBufferInterface_getSize = (instance: GenericBufferInterface): number
+// @ExportFunction genericBufferInterface_getSize = (instance: GenericBufferInterfacePointer): number
 Napi::Value genericBufferInterface_getSize(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -415,7 +415,7 @@ Napi::Value genericBufferInterface_getSize(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction genericBufferInterface_getType = (instance: GenericBufferInterface): VEngineBufferType
+// @ExportFunction genericBufferInterface_getType = (instance: GenericBufferInterfacePointer): VEngineBufferType
 Napi::Value genericBufferInterface_getType(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -431,7 +431,7 @@ Napi::Value genericBufferInterface_getType(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction imageFactoryInterface_build = (instance: ImageFactoryInterface, width: number, height: number, depth: number, format: VEngineImageFormat, usage: VEngineImageUsage, aspect: VEngineImageAspect, layout: VEngineImageLayout): ImageInterface
+// @ExportFunction imageFactoryInterface_build = (instance: ImageFactoryInterfacePointer, width: number, height: number, depth: number, format: VEngineImageFormat, usage: VEngineImageUsage, aspect: VEngineImageAspect, layout: VEngineImageLayout): ImageInterfacePointer
 Napi::Value imageFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -453,7 +453,7 @@ auto param_layout = (VEngineImageLayout)asInt32(info[arg++]);
 };
         
 
-// @ExportFunction imageFactoryInterface_buildMipmapped = (instance: ImageFactoryInterface, width: number, height: number, depth: number, format: VEngineImageFormat, usage: VEngineImageUsage, aspect: VEngineImageAspect, layout: VEngineImageLayout): ImageInterface
+// @ExportFunction imageFactoryInterface_buildMipmapped = (instance: ImageFactoryInterfacePointer, width: number, height: number, depth: number, format: VEngineImageFormat, usage: VEngineImageUsage, aspect: VEngineImageAspect, layout: VEngineImageLayout): ImageInterfacePointer
 Napi::Value imageFactoryInterface_buildMipmapped(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -475,7 +475,7 @@ auto param_layout = (VEngineImageLayout)asInt32(info[arg++]);
 };
         
 
-// @ExportFunction imageFactoryInterface_loadFromFile = (instance: ImageFactoryInterface, path: string): ImageInterface
+// @ExportFunction imageFactoryInterface_loadFromFile = (instance: ImageFactoryInterfacePointer, path: string): ImageInterfacePointer
 Napi::Value imageFactoryInterface_loadFromFile(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -491,7 +491,7 @@ Napi::Value imageFactoryInterface_loadFromFile(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction imageFactoryInterface_createFromExistingData = (instance: ImageFactoryInterface, width: number, height: number, channelCount: number, data: void): ImageInterface
+// @ExportFunction imageFactoryInterface_createFromExistingData = (instance: ImageFactoryInterfacePointer, width: number, height: number, channelCount: number, data: ArrayBuffer): ImageInterfacePointer
 Napi::Value imageFactoryInterface_createFromExistingData(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -502,7 +502,7 @@ Napi::Value imageFactoryInterface_createFromExistingData(const Napi::CallbackInf
     auto param_width = asUint32(info[arg++]);
 auto param_height = asUint32(info[arg++]);
 auto param_channelCount = asUint32(info[arg++]);
-auto param_data = (void*)castBigIntToVoidPointer(info[arg++]);
+auto param_data = asVoidBufferPointer(info[arg++]);
     
     auto result = instance->createFromExistingData(param_width, param_height, param_channelCount, param_data);
 
@@ -510,7 +510,7 @@ auto param_data = (void*)castBigIntToVoidPointer(info[arg++]);
 };
         
 
-// @ExportFunction imageFactoryInterface_resolveIsDepthBuffer = (instance: ImageFactoryInterface, format: VEngineImageFormat): boolean
+// @ExportFunction imageFactoryInterface_resolveIsDepthBuffer = (instance: ImageFactoryInterfacePointer, format: VEngineImageFormat): boolean
 Napi::Value imageFactoryInterface_resolveIsDepthBuffer(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -526,7 +526,7 @@ Napi::Value imageFactoryInterface_resolveIsDepthBuffer(const Napi::CallbackInfo&
 };
         
 
-// @ExportFunction imageInterface_getAttachment = (instance: ImageInterface, blending: VEngineAttachmentBlending, clear: boolean, clearColor: number[], forPresent: boolean): AttachmentInterface
+// @ExportFunction imageInterface_getAttachment = (instance: ImageInterfacePointer, blending: VEngineAttachmentBlending, clear: boolean, clearColor: number[], forPresent: boolean): AttachmentInterfacePointer
 Napi::Value imageInterface_getAttachment(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -545,7 +545,7 @@ auto param_forPresent = asBool(info[arg++]);
 };
         
 
-// @ExportFunction imageInterface_isDepthBuffer = (instance: ImageInterface): boolean
+// @ExportFunction imageInterface_isDepthBuffer = (instance: ImageInterfacePointer): boolean
 Napi::Value imageInterface_isDepthBuffer(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -561,7 +561,7 @@ Napi::Value imageInterface_isDepthBuffer(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction imageInterface_regenerateMipmaps = (instance: ImageInterface): void
+// @ExportFunction imageInterface_regenerateMipmaps = (instance: ImageInterfacePointer): void
 Napi::Value imageInterface_regenerateMipmaps(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -577,7 +577,7 @@ Napi::Value imageInterface_regenerateMipmaps(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction object3dInfoFactoryInterface_loadFromFile = (instance: Object3dInfoFactoryInterface, path: string): Object3dInfoInterface
+// @ExportFunction object3dInfoFactoryInterface_loadFromFile = (instance: Object3dInfoFactoryInterfacePointer, path: string): Object3dInfoInterfacePointer
 Napi::Value object3dInfoFactoryInterface_loadFromFile(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -593,7 +593,7 @@ Napi::Value object3dInfoFactoryInterface_loadFromFile(const Napi::CallbackInfo& 
 };
         
 
-// @ExportFunction object3dInfoFactoryInterface_loadFromArray = (instance: Object3dInfoFactoryInterface, rawData: number[]): Object3dInfoInterface
+// @ExportFunction object3dInfoFactoryInterface_loadFromArray = (instance: Object3dInfoFactoryInterfacePointer, rawData: number[]): Object3dInfoInterfacePointer
 Napi::Value object3dInfoFactoryInterface_loadFromArray(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -609,7 +609,7 @@ Napi::Value object3dInfoFactoryInterface_loadFromArray(const Napi::CallbackInfo&
 };
         
 
-// @ExportFunction object3dInfoFactoryInterface_getFullScreenQuad = (instance: Object3dInfoFactoryInterface): Object3dInfoInterface
+// @ExportFunction object3dInfoFactoryInterface_getFullScreenQuad = (instance: Object3dInfoFactoryInterfacePointer): Object3dInfoInterfacePointer
 Napi::Value object3dInfoFactoryInterface_getFullScreenQuad(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -625,7 +625,7 @@ Napi::Value object3dInfoFactoryInterface_getFullScreenQuad(const Napi::CallbackI
 };
         
 
-// @ExportFunction renderStageFactoryInterface_build = (instance: RenderStageFactoryInterface, width: number, height: number, shaders: ShaderModuleInterface[], layouts: DescriptorSetLayoutInterface[], outputImages: AttachmentInterface[], cullMode: VEngineCullMode): RenderStageInterface
+// @ExportFunction renderStageFactoryInterface_build = (instance: RenderStageFactoryInterfacePointer, width: number, height: number, shaders: ShaderModuleInterfacePointer[], layouts: DescriptorSetLayoutInterfacePointer[], outputImages: AttachmentInterfacePointer[], cullMode: VEngineCullMode): RenderStageInterfacePointer
 Napi::Value renderStageFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -646,7 +646,7 @@ auto param_cullMode = (VEngineCullMode)asInt32(info[arg++]);
 };
         
 
-// @ExportFunction renderStageInterface_beginDrawing = (instance: RenderStageInterface): void
+// @ExportFunction renderStageInterface_beginDrawing = (instance: RenderStageInterfacePointer): void
 Napi::Value renderStageInterface_beginDrawing(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -662,7 +662,7 @@ Napi::Value renderStageInterface_beginDrawing(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction renderStageInterface_endDrawing = (instance: RenderStageInterface): void
+// @ExportFunction renderStageInterface_endDrawing = (instance: RenderStageInterfacePointer): void
 Napi::Value renderStageInterface_endDrawing(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -678,7 +678,7 @@ Napi::Value renderStageInterface_endDrawing(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction renderStageInterface_setSets = (instance: RenderStageInterface, sets: DescriptorSetInterface[]): void
+// @ExportFunction renderStageInterface_setSets = (instance: RenderStageInterfacePointer, sets: DescriptorSetInterfacePointer[]): void
 Napi::Value renderStageInterface_setSets(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -694,7 +694,7 @@ Napi::Value renderStageInterface_setSets(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction renderStageInterface_setSet = (instance: RenderStageInterface, index: number, set: DescriptorSetInterface): void
+// @ExportFunction renderStageInterface_setSet = (instance: RenderStageInterfacePointer, index: number, set: DescriptorSetInterfacePointer): void
 Napi::Value renderStageInterface_setSet(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -711,7 +711,7 @@ auto param_set = (DescriptorSetInterface*)castBigIntToVoidPointer(info[arg++]);
 };
         
 
-// @ExportFunction renderStageInterface_drawMesh = (instance: RenderStageInterface, info: Object3dInfoInterface, instances: number): void
+// @ExportFunction renderStageInterface_drawMesh = (instance: RenderStageInterfacePointer, info: Object3dInfoInterfacePointer, instances: number): void
 Napi::Value renderStageInterface_drawMesh(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -728,7 +728,7 @@ auto param_instances = asUint32(info[arg++]);
 };
         
 
-// @ExportFunction renderStageInterface_submit = (instance: RenderStageInterface, waitSemaphores: SemaphoreInterface[]): void
+// @ExportFunction renderStageInterface_submit = (instance: RenderStageInterfacePointer, waitSemaphores: SemaphoreInterfacePointer[]): void
 Napi::Value renderStageInterface_submit(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -744,7 +744,7 @@ Napi::Value renderStageInterface_submit(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction renderStageInterface_submitNoSemaphores = (instance: RenderStageInterface, waitSemaphores: SemaphoreInterface[]): void
+// @ExportFunction renderStageInterface_submitNoSemaphores = (instance: RenderStageInterfacePointer, waitSemaphores: SemaphoreInterfacePointer[]): void
 Napi::Value renderStageInterface_submitNoSemaphores(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -760,7 +760,7 @@ Napi::Value renderStageInterface_submitNoSemaphores(const Napi::CallbackInfo& in
 };
         
 
-// @ExportFunction renderStageInterface_copy = (instance: RenderStageInterface): RenderStageInterface
+// @ExportFunction renderStageInterface_copy = (instance: RenderStageInterfacePointer): RenderStageInterfacePointer
 Napi::Value renderStageInterface_copy(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -776,7 +776,7 @@ Napi::Value renderStageInterface_copy(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction renderStageInterface_copyWithNewOutput = (instance: RenderStageInterface, outputImages: AttachmentInterface[]): RenderStageInterface
+// @ExportFunction renderStageInterface_copyWithNewOutput = (instance: RenderStageInterfacePointer, outputImages: AttachmentInterfacePointer[]): RenderStageInterfacePointer
 Napi::Value renderStageInterface_copyWithNewOutput(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -792,7 +792,7 @@ Napi::Value renderStageInterface_copyWithNewOutput(const Napi::CallbackInfo& inf
 };
         
 
-// @ExportFunction renderStageInterface_getSignalSemaphore = (instance: RenderStageInterface): SemaphoreInterface
+// @ExportFunction renderStageInterface_getSignalSemaphore = (instance: RenderStageInterfacePointer): SemaphoreInterfacePointer
 Napi::Value renderStageInterface_getSignalSemaphore(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -808,7 +808,7 @@ Napi::Value renderStageInterface_getSignalSemaphore(const Napi::CallbackInfo& in
 };
         
 
-// @ExportFunction semaphoreFactoryInterface_build = (instance: SemaphoreFactoryInterface): SemaphoreInterface
+// @ExportFunction semaphoreFactoryInterface_build = (instance: SemaphoreFactoryInterfacePointer): SemaphoreInterfacePointer
 Napi::Value semaphoreFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -824,7 +824,7 @@ Napi::Value semaphoreFactoryInterface_build(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction shaderFactoryInterface_build = (instance: ShaderFactoryInterface, type: VEngineShaderModuleType, path: string): ShaderModuleInterface
+// @ExportFunction shaderFactoryInterface_build = (instance: ShaderFactoryInterfacePointer, type: VEngineShaderModuleType, path: string): ShaderModuleInterfacePointer
 Napi::Value shaderFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -841,7 +841,7 @@ auto param_path = asString(info[arg++]);
 };
         
 
-// @ExportFunction shaderModuleInterface_getType = (instance: ShaderModuleInterface): VEngineShaderModuleType
+// @ExportFunction shaderModuleInterface_getType = (instance: ShaderModuleInterfacePointer): VEngineShaderModuleType
 Napi::Value shaderModuleInterface_getType(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -857,7 +857,7 @@ Napi::Value shaderModuleInterface_getType(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction swapChainOutputFactoryInterface_build = (instance: SwapChainOutputFactoryInterface, stage: RenderStageInterface): SwapChainOutputInterface
+// @ExportFunction swapChainOutputFactoryInterface_build = (instance: SwapChainOutputFactoryInterfacePointer, stage: RenderStageInterfacePointer): SwapChainOutputInterfacePointer
 Napi::Value swapChainOutputFactoryInterface_build(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -873,7 +873,7 @@ Napi::Value swapChainOutputFactoryInterface_build(const Napi::CallbackInfo& info
 };
         
 
-// @ExportFunction swapChainOutputInterface_beginDrawing = (instance: SwapChainOutputInterface): void
+// @ExportFunction swapChainOutputInterface_beginDrawing = (instance: SwapChainOutputInterfacePointer): void
 Napi::Value swapChainOutputInterface_beginDrawing(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -889,7 +889,7 @@ Napi::Value swapChainOutputInterface_beginDrawing(const Napi::CallbackInfo& info
 };
         
 
-// @ExportFunction swapChainOutputInterface_endDrawing = (instance: SwapChainOutputInterface): void
+// @ExportFunction swapChainOutputInterface_endDrawing = (instance: SwapChainOutputInterfacePointer): void
 Napi::Value swapChainOutputInterface_endDrawing(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -905,7 +905,7 @@ Napi::Value swapChainOutputInterface_endDrawing(const Napi::CallbackInfo& info) 
 };
         
 
-// @ExportFunction swapChainOutputInterface_drawMesh = (instance: SwapChainOutputInterface, info: Object3dInfoInterface, instances: number): void
+// @ExportFunction swapChainOutputInterface_drawMesh = (instance: SwapChainOutputInterfacePointer, info: Object3dInfoInterfacePointer, instances: number): void
 Napi::Value swapChainOutputInterface_drawMesh(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -922,7 +922,7 @@ auto param_instances = asUint32(info[arg++]);
 };
         
 
-// @ExportFunction swapChainOutputInterface_submit = (instance: SwapChainOutputInterface, waitSemaphores: SemaphoreInterface[]): void
+// @ExportFunction swapChainOutputInterface_submit = (instance: SwapChainOutputInterfacePointer, waitSemaphores: SemaphoreInterfacePointer[]): void
 Napi::Value swapChainOutputInterface_submit(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -938,7 +938,7 @@ Napi::Value swapChainOutputInterface_submit(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction swapChainOutputInterface_getSignalSemaphores = (instance: SwapChainOutputInterface): SemaphoreInterface[]
+// @ExportFunction swapChainOutputInterface_getSignalSemaphores = (instance: SwapChainOutputInterfacePointer): SemaphoreInterfacePointer[]
 Napi::Value swapChainOutputInterface_getSignalSemaphores(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -958,7 +958,7 @@ Napi::Value swapChainOutputInterface_getSignalSemaphores(const Napi::CallbackInf
 };
         
 
-// @ExportFunction toolkitInterface_shouldCloseWindow = (instance: ToolkitInterface): boolean
+// @ExportFunction toolkitInterface_shouldCloseWindow = (instance: ToolkitInterfacePointer): boolean
 Napi::Value toolkitInterface_shouldCloseWindow(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -974,7 +974,7 @@ Napi::Value toolkitInterface_shouldCloseWindow(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_poolEvents = (instance: ToolkitInterface): void
+// @ExportFunction toolkitInterface_poolEvents = (instance: ToolkitInterfacePointer): void
 Napi::Value toolkitInterface_poolEvents(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -990,7 +990,7 @@ Napi::Value toolkitInterface_poolEvents(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getExecutionTime = (instance: ToolkitInterface): number
+// @ExportFunction toolkitInterface_getExecutionTime = (instance: ToolkitInterfacePointer): number
 Napi::Value toolkitInterface_getExecutionTime(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1006,7 +1006,7 @@ Napi::Value toolkitInterface_getExecutionTime(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getTotalAllocatedMemory = (instance: ToolkitInterface): number
+// @ExportFunction toolkitInterface_getTotalAllocatedMemory = (instance: ToolkitInterfacePointer): number
 Napi::Value toolkitInterface_getTotalAllocatedMemory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1022,7 +1022,7 @@ Napi::Value toolkitInterface_getTotalAllocatedMemory(const Napi::CallbackInfo& i
 };
         
 
-// @ExportFunction toolkitInterface_waitQueueIdle = (instance: ToolkitInterface): void
+// @ExportFunction toolkitInterface_waitQueueIdle = (instance: ToolkitInterfacePointer): void
 Napi::Value toolkitInterface_waitQueueIdle(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1038,7 +1038,7 @@ Napi::Value toolkitInterface_waitQueueIdle(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_waitDeviceIdle = (instance: ToolkitInterface): void
+// @ExportFunction toolkitInterface_waitDeviceIdle = (instance: ToolkitInterfacePointer): void
 Napi::Value toolkitInterface_waitDeviceIdle(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1054,7 +1054,7 @@ Napi::Value toolkitInterface_waitDeviceIdle(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getObject3dInfoFactory = (instance: ToolkitInterface): Object3dInfoFactoryInterface
+// @ExportFunction toolkitInterface_getObject3dInfoFactory = (instance: ToolkitInterfacePointer): Object3dInfoFactoryInterfacePointer
 Napi::Value toolkitInterface_getObject3dInfoFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1070,7 +1070,7 @@ Napi::Value toolkitInterface_getObject3dInfoFactory(const Napi::CallbackInfo& in
 };
         
 
-// @ExportFunction toolkitInterface_getShaderFactory = (instance: ToolkitInterface): ShaderFactoryInterface
+// @ExportFunction toolkitInterface_getShaderFactory = (instance: ToolkitInterfacePointer): ShaderFactoryInterfacePointer
 Napi::Value toolkitInterface_getShaderFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1086,7 +1086,7 @@ Napi::Value toolkitInterface_getShaderFactory(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getDescriptorSetLayoutFactory = (instance: ToolkitInterface): DescriptorSetLayoutFactoryInterface
+// @ExportFunction toolkitInterface_getDescriptorSetLayoutFactory = (instance: ToolkitInterfacePointer): DescriptorSetLayoutFactoryInterfacePointer
 Napi::Value toolkitInterface_getDescriptorSetLayoutFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1102,7 +1102,7 @@ Napi::Value toolkitInterface_getDescriptorSetLayoutFactory(const Napi::CallbackI
 };
         
 
-// @ExportFunction toolkitInterface_getRenderStageFactory = (instance: ToolkitInterface): RenderStageFactoryInterface
+// @ExportFunction toolkitInterface_getRenderStageFactory = (instance: ToolkitInterfacePointer): RenderStageFactoryInterfacePointer
 Napi::Value toolkitInterface_getRenderStageFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1118,7 +1118,7 @@ Napi::Value toolkitInterface_getRenderStageFactory(const Napi::CallbackInfo& inf
 };
         
 
-// @ExportFunction toolkitInterface_getComputeStageFactory = (instance: ToolkitInterface): ComputeStageFactoryInterface
+// @ExportFunction toolkitInterface_getComputeStageFactory = (instance: ToolkitInterfacePointer): ComputeStageFactoryInterfacePointer
 Napi::Value toolkitInterface_getComputeStageFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1134,7 +1134,7 @@ Napi::Value toolkitInterface_getComputeStageFactory(const Napi::CallbackInfo& in
 };
         
 
-// @ExportFunction toolkitInterface_getBufferFactory = (instance: ToolkitInterface): BufferFactoryInterface
+// @ExportFunction toolkitInterface_getBufferFactory = (instance: ToolkitInterfacePointer): BufferFactoryInterfacePointer
 Napi::Value toolkitInterface_getBufferFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1150,7 +1150,7 @@ Napi::Value toolkitInterface_getBufferFactory(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getImageFactory = (instance: ToolkitInterface): ImageFactoryInterface
+// @ExportFunction toolkitInterface_getImageFactory = (instance: ToolkitInterfacePointer): ImageFactoryInterfacePointer
 Napi::Value toolkitInterface_getImageFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1166,7 +1166,7 @@ Napi::Value toolkitInterface_getImageFactory(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getSwapChainOutputFactory = (instance: ToolkitInterface): SwapChainOutputFactoryInterface
+// @ExportFunction toolkitInterface_getSwapChainOutputFactory = (instance: ToolkitInterfacePointer): SwapChainOutputFactoryInterfacePointer
 Napi::Value toolkitInterface_getSwapChainOutputFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1182,7 +1182,7 @@ Napi::Value toolkitInterface_getSwapChainOutputFactory(const Napi::CallbackInfo&
 };
         
 
-// @ExportFunction toolkitInterface_getSemaphoreFactory = (instance: ToolkitInterface): SemaphoreFactoryInterface
+// @ExportFunction toolkitInterface_getSemaphoreFactory = (instance: ToolkitInterfacePointer): SemaphoreFactoryInterfacePointer
 Napi::Value toolkitInterface_getSemaphoreFactory(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1198,7 +1198,7 @@ Napi::Value toolkitInterface_getSemaphoreFactory(const Napi::CallbackInfo& info)
 };
         
 
-// @ExportFunction toolkitInterface_getKeyboard = (instance: ToolkitInterface): KeyboardInterface
+// @ExportFunction toolkitInterface_getKeyboard = (instance: ToolkitInterfacePointer): KeyboardInterfacePointer
 Napi::Value toolkitInterface_getKeyboard(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1214,7 +1214,7 @@ Napi::Value toolkitInterface_getKeyboard(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getMouse = (instance: ToolkitInterface): MouseInterface
+// @ExportFunction toolkitInterface_getMouse = (instance: ToolkitInterfacePointer): MouseInterfacePointer
 Napi::Value toolkitInterface_getMouse(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1230,7 +1230,7 @@ Napi::Value toolkitInterface_getMouse(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getJoystick = (instance: ToolkitInterface): JoystickInterface
+// @ExportFunction toolkitInterface_getJoystick = (instance: ToolkitInterfacePointer): JoystickInterfacePointer
 Napi::Value toolkitInterface_getJoystick(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -1246,7 +1246,7 @@ Napi::Value toolkitInterface_getJoystick(const Napi::CallbackInfo& info) {
 };
         
 
-// @ExportFunction toolkitInterface_getMedia = (instance: ToolkitInterface): MediaInterface
+// @ExportFunction toolkitInterface_getMedia = (instance: ToolkitInterfacePointer): MediaInterfacePointer
 Napi::Value toolkitInterface_getMedia(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 

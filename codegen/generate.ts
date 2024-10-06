@@ -22,9 +22,10 @@ export interface CodeGenPlugin {
 
 const rootDir = path.resolve(".");
 
+const bindingGenPlugin = new NAPIAutoGenerateBindingPlugin();
 const plugins: CodeGenPlugin[] = [
-  new NAPIAutoGenerateBindingPlugin(),
-  new NAPIExportsPlugin()
+  bindingGenPlugin,
+  new NAPIExportsPlugin(bindingGenPlugin)
 ];
 
 async function main(): Promise<void> {

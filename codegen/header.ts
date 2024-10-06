@@ -134,77 +134,84 @@ export enum VEngineImageFormat {
 }
 
 const uniqueSymbol_VEngine_MediaInterfaceSymbol = Symbol();
-export type MediaInterface = bigint & { [uniqueSymbol_VEngine_MediaInterfaceSymbol]: typeof uniqueSymbol_VEngine_MediaInterfaceSymbol };
+export type MediaInterfacePointer = bigint & { [uniqueSymbol_VEngine_MediaInterfaceSymbol]: typeof uniqueSymbol_VEngine_MediaInterfaceSymbol };
 
 const uniqueSymbol_VEngine_JoystickInterfaceSymbol = Symbol();
-export type JoystickInterface = bigint & { [uniqueSymbol_VEngine_JoystickInterfaceSymbol]: typeof uniqueSymbol_VEngine_JoystickInterfaceSymbol };
+export type JoystickInterfacePointer = bigint & { [uniqueSymbol_VEngine_JoystickInterfaceSymbol]: typeof uniqueSymbol_VEngine_JoystickInterfaceSymbol };
 
 const uniqueSymbol_VEngine_KeyboardInterfaceSymbol = Symbol();
-export type KeyboardInterface = bigint & { [uniqueSymbol_VEngine_KeyboardInterfaceSymbol]: typeof uniqueSymbol_VEngine_KeyboardInterfaceSymbol };
+export type KeyboardInterfacePointer = bigint & { [uniqueSymbol_VEngine_KeyboardInterfaceSymbol]: typeof uniqueSymbol_VEngine_KeyboardInterfaceSymbol };
 
 const uniqueSymbol_VEngine_MouseInterfaceSymbol = Symbol();
-export type MouseInterface = bigint & { [uniqueSymbol_VEngine_MouseInterfaceSymbol]: typeof uniqueSymbol_VEngine_MouseInterfaceSymbol };
+export type MouseInterfacePointer = bigint & { [uniqueSymbol_VEngine_MouseInterfaceSymbol]: typeof uniqueSymbol_VEngine_MouseInterfaceSymbol };
 
 const uniqueSymbol_VEngine_Object3dInfoInterfaceSymbol = Symbol();
-export type Object3dInfoInterface = bigint & { [uniqueSymbol_VEngine_Object3dInfoInterfaceSymbol]: typeof uniqueSymbol_VEngine_Object3dInfoInterfaceSymbol };
+export type Object3dInfoInterfacePointer = bigint & { [uniqueSymbol_VEngine_Object3dInfoInterfaceSymbol]: typeof uniqueSymbol_VEngine_Object3dInfoInterfaceSymbol };
 
 const uniqueSymbol_VEngine_ComputeStageInterfaceSymbol = Symbol();
-export type ComputeStageInterface = bigint & { [uniqueSymbol_VEngine_ComputeStageInterfaceSymbol]: typeof uniqueSymbol_VEngine_ComputeStageInterfaceSymbol };
+export type ComputeStageInterfacePointer = bigint & { [uniqueSymbol_VEngine_ComputeStageInterfaceSymbol]: typeof uniqueSymbol_VEngine_ComputeStageInterfaceSymbol };
 
 const uniqueSymbol_VEngine_DescriptorSetInterfaceSymbol = Symbol();
-export type DescriptorSetInterface = bigint & { [uniqueSymbol_VEngine_DescriptorSetInterfaceSymbol]: typeof uniqueSymbol_VEngine_DescriptorSetInterfaceSymbol };
+export type DescriptorSetInterfacePointer = bigint & { [uniqueSymbol_VEngine_DescriptorSetInterfaceSymbol]: typeof uniqueSymbol_VEngine_DescriptorSetInterfaceSymbol };
 
 const uniqueSymbol_VEngine_DescriptorSetLayoutInterfaceSymbol = Symbol();
-export type DescriptorSetLayoutInterface = bigint & { [uniqueSymbol_VEngine_DescriptorSetLayoutInterfaceSymbol]: typeof uniqueSymbol_VEngine_DescriptorSetLayoutInterfaceSymbol };
+export type DescriptorSetLayoutInterfacePointer = bigint & { [uniqueSymbol_VEngine_DescriptorSetLayoutInterfaceSymbol]: typeof uniqueSymbol_VEngine_DescriptorSetLayoutInterfaceSymbol };
 
 const uniqueSymbol_VEngine_GenericBufferInterfaceSymbol = Symbol();
-export type GenericBufferInterface = bigint & { [uniqueSymbol_VEngine_GenericBufferInterfaceSymbol]: typeof uniqueSymbol_VEngine_GenericBufferInterfaceSymbol };
+export type GenericBufferInterfacePointer = bigint & { [uniqueSymbol_VEngine_GenericBufferInterfaceSymbol]: typeof uniqueSymbol_VEngine_GenericBufferInterfaceSymbol };
 
 const uniqueSymbol_VEngine_ImageInterfaceSymbol = Symbol();
-export type ImageInterface = bigint & { [uniqueSymbol_VEngine_ImageInterfaceSymbol]: typeof uniqueSymbol_VEngine_ImageInterfaceSymbol };
+export type ImageInterfacePointer = bigint & { [uniqueSymbol_VEngine_ImageInterfaceSymbol]: typeof uniqueSymbol_VEngine_ImageInterfaceSymbol };
 
 const uniqueSymbol_VEngine_RenderStageInterfaceSymbol = Symbol();
-export type RenderStageInterface = bigint & { [uniqueSymbol_VEngine_RenderStageInterfaceSymbol]: typeof uniqueSymbol_VEngine_RenderStageInterfaceSymbol };
+export type RenderStageInterfacePointer = bigint & { [uniqueSymbol_VEngine_RenderStageInterfaceSymbol]: typeof uniqueSymbol_VEngine_RenderStageInterfaceSymbol };
 
 const uniqueSymbol_VEngine_ShaderModuleInterfaceSymbol = Symbol();
-export type ShaderModuleInterface = bigint & { [uniqueSymbol_VEngine_ShaderModuleInterfaceSymbol]: typeof uniqueSymbol_VEngine_ShaderModuleInterfaceSymbol };
+export type ShaderModuleInterfacePointer = bigint & { [uniqueSymbol_VEngine_ShaderModuleInterfaceSymbol]: typeof uniqueSymbol_VEngine_ShaderModuleInterfaceSymbol };
 
 const uniqueSymbol_VEngine_ToolkitInterfaceSymbol = Symbol();
-export type ToolkitInterface = bigint & { [uniqueSymbol_VEngine_ToolkitInterfaceSymbol]: typeof uniqueSymbol_VEngine_ToolkitInterfaceSymbol };
+export type ToolkitInterfacePointer = bigint & { [uniqueSymbol_VEngine_ToolkitInterfaceSymbol]: typeof uniqueSymbol_VEngine_ToolkitInterfaceSymbol };
 
 const uniqueSymbol_VEngine_SwapChainOutputInterfaceSymbol = Symbol();
-export type SwapChainOutputInterface = bigint & { [uniqueSymbol_VEngine_SwapChainOutputInterfaceSymbol]: typeof uniqueSymbol_VEngine_SwapChainOutputInterfaceSymbol };
+export type SwapChainOutputInterfacePointer = bigint & { [uniqueSymbol_VEngine_SwapChainOutputInterfaceSymbol]: typeof uniqueSymbol_VEngine_SwapChainOutputInterfaceSymbol };
 
 const uniqueSymbol_VEngine_AttachmentInterfaceSymbol = Symbol();
-export type AttachmentInterface = bigint & { [uniqueSymbol_VEngine_AttachmentInterfaceSymbol]: typeof uniqueSymbol_VEngine_AttachmentInterfaceSymbol };
+export type AttachmentInterfacePointer = bigint & { [uniqueSymbol_VEngine_AttachmentInterfaceSymbol]: typeof uniqueSymbol_VEngine_AttachmentInterfaceSymbol };
 
 const uniqueSymbol_VEngine_SemaphoreInterfaceSymbol = Symbol();
-export type SemaphoreInterface = bigint & { [uniqueSymbol_VEngine_SemaphoreInterfaceSymbol]: typeof uniqueSymbol_VEngine_SemaphoreInterfaceSymbol };
+export type SemaphoreInterfacePointer = bigint & { [uniqueSymbol_VEngine_SemaphoreInterfaceSymbol]: typeof uniqueSymbol_VEngine_SemaphoreInterfaceSymbol };
 
 const uniqueSymbol_VEngine_Object3dInfoFactoryInterfaceSymbol = Symbol();
-export type Object3dInfoFactoryInterface = bigint & { [uniqueSymbol_VEngine_Object3dInfoFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_Object3dInfoFactoryInterfaceSymbol };
+export type Object3dInfoFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_Object3dInfoFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_Object3dInfoFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_ShaderFactoryInterfaceSymbol = Symbol();
-export type ShaderFactoryInterface = bigint & { [uniqueSymbol_VEngine_ShaderFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_ShaderFactoryInterfaceSymbol };
+export type ShaderFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_ShaderFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_ShaderFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_DescriptorSetLayoutFactoryInterfaceSymbol = Symbol();
-export type DescriptorSetLayoutFactoryInterface = bigint & { [uniqueSymbol_VEngine_DescriptorSetLayoutFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_DescriptorSetLayoutFactoryInterfaceSymbol };
+export type DescriptorSetLayoutFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_DescriptorSetLayoutFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_DescriptorSetLayoutFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_RenderStageFactoryInterfaceSymbol = Symbol();
-export type RenderStageFactoryInterface = bigint & { [uniqueSymbol_VEngine_RenderStageFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_RenderStageFactoryInterfaceSymbol };
+export type RenderStageFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_RenderStageFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_RenderStageFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_ComputeStageFactoryInterfaceSymbol = Symbol();
-export type ComputeStageFactoryInterface = bigint & { [uniqueSymbol_VEngine_ComputeStageFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_ComputeStageFactoryInterfaceSymbol };
+export type ComputeStageFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_ComputeStageFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_ComputeStageFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_BufferFactoryInterfaceSymbol = Symbol();
-export type BufferFactoryInterface = bigint & { [uniqueSymbol_VEngine_BufferFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_BufferFactoryInterfaceSymbol };
+export type BufferFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_BufferFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_BufferFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_ImageFactoryInterfaceSymbol = Symbol();
-export type ImageFactoryInterface = bigint & { [uniqueSymbol_VEngine_ImageFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_ImageFactoryInterfaceSymbol };
+export type ImageFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_ImageFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_ImageFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_SwapChainOutputFactoryInterfaceSymbol = Symbol();
-export type SwapChainOutputFactoryInterface = bigint & { [uniqueSymbol_VEngine_SwapChainOutputFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_SwapChainOutputFactoryInterfaceSymbol };
+export type SwapChainOutputFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_SwapChainOutputFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_SwapChainOutputFactoryInterfaceSymbol };
 
 const uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol = Symbol();
-export type SemaphoreFactoryInterface = bigint & { [uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol };
+export type SemaphoreFactoryInterfacePointer = bigint & { [uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol]: typeof uniqueSymbol_VEngine_SemaphoreFactoryInterfaceSymbol };
 
+type BindFirstParam<F> = F extends (first: any, ...rest: infer R) => infer ReturnType
+  ? (...args: R) => ReturnType
+  : never;
+
+type ChangeReturnType<F, NewReturnType> = F extends (...args: infer R) => any
+  ? (...args: R) => NewReturnType
+  : never;

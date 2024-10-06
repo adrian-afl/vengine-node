@@ -1,6 +1,6 @@
 #include "../VEngineNative.h"
 
-// @ExportFunction toolkitInterface_new_window = (width: number, height: number, validationLayers: boolean, windowName: string): ToolkitInterface
+// @ExportFunction toolkitInterface_new_window = (width: number, height: number, validationLayers: boolean, windowName: string): ToolkitInterfacePointer
 Napi::Value toolkitInterface_new_window(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
@@ -15,7 +15,7 @@ Napi::Value toolkitInterface_new_window(const Napi::CallbackInfo& info) {
     return newPointer(vulkan);
 };
 
-// @ExportFunction toolkitInterface_new_headless = (validationLayers: boolean): ToolkitInterface
+// @ExportFunction toolkitInterface_new_headless = (validationLayers: boolean): ToolkitInterfacePointer
 Napi::Value toolkitInterface_new_headless(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
 
